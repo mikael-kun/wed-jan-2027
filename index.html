@@ -2,233 +2,462 @@
 <html lang="fi">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += ' js';</script>
+<title>Mikael &amp; Mira &middot; Helsinki 2027</title>
+<meta name="description" content="Mikaelin ja Miran hääseremonia &middot; Helsinki, tammikuu 2027 &middot; 結婚式">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..420&family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 14mm 16mm 12mm 16mm; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body {
-    font-family: "Noto Serif CJK JP", Georgia, serif;
-    color: #20242b;
-    font-size: 10.2pt;
-    line-height: 1.34;
+  :root{
+    --ink:#19212e;        /* midwinter night */
+    --ink-soft:#2b3543;
+    --paper:#f3f5f4;      /* cool snow */
+    --paper-2:#fbfcfb;
+    --ice:#e7eef2;        /* pale ice panel */
+    --ice-line:#d3dde4;   /* frost hairline */
+    --brass:#b3823f;      /* candle / brass accent */
+    --brass-deep:#8a6233;
+    --jp:#8a6a44;         /* japanese rule + text */
+    --muted:#6b7682;
+    --muted-2:#9aa6b0;
+
+    --display:'Fraunces', Georgia, 'Noto Serif CJK JP', serif;
+    --body:'Newsreader', Georgia, 'Noto Serif CJK JP', serif;
+    --ui:'Inter', system-ui, -apple-system, sans-serif;
+    --jpfont:'Noto Serif JP','Noto Serif CJK JP', serif;
   }
-  .accent { color: #7a5a2e; }
-
-  /* Header */
-  header { text-align: center; padding-bottom: 9px; border-bottom: 1.4px solid #20242b; }
-  .eyebrow {
-    font-size: 7.4pt; letter-spacing: 0.42em; text-transform: uppercase;
-    color: #7a5a2e; margin-bottom: 9px; padding-left: 0.42em;
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body); color:var(--ink); background:var(--paper);
+    font-size:18px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    font-optical-sizing:auto;
   }
-  .names { font-size: 23pt; font-weight: 600; letter-spacing: 0.02em; line-height: 1.05; }
-  .names .amp { color: #7a5a2e; font-style: italic; font-weight: 400; }
-  .sub { font-size: 8.6pt; letter-spacing: 0.22em; text-transform: uppercase; color: #5b606b; margin-top: 8px; }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
 
-  /* Part headings */
-  .part {
-    margin-top: 13px; margin-bottom: 4px;
-    font-size: 7.8pt; letter-spacing: 0.34em; text-transform: uppercase;
-    color: #7a5a2e; font-weight: 600;
-    display: flex; align-items: center; gap: 9px;
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    background:rgba(243,245,244,.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ice-line);
   }
-  .part::after { content: ""; flex: 1; height: 0.7px; background: #cdbfa6; }
-
-  /* Items */
-  .item { display: flex; align-items: baseline; gap: 9px; padding: 1.6px 0; }
-  .num { width: 16px; flex: 0 0 16px; text-align: right; color: #9aa0ab; font-size: 8.6pt; }
-  .label { flex: 1; }
-  .ftype { color: #9aa0ab; font-size: 8.6pt; font-style: italic; }
-
-  /* Chosen item block */
-  .chosen { margin: 3px 0 3px 0; padding: 7px 12px 8px 13px; border-left: 2.2px solid #7a5a2e; background: #f7f3ec; }
-  .chosen .top { display: flex; align-items: baseline; gap: 9px; }
-  .chosen .num { color: #7a5a2e; font-weight: 600; }
-  .chosen .title { flex: 1; font-weight: 600; }
-  .chosen .tag {
-    font-size: 6.8pt; letter-spacing: 0.16em; text-transform: uppercase;
-    color: #fff; background: #7a5a2e; padding: 2px 6px; border-radius: 2px; white-space: nowrap;
+  .mono{font-family:var(--display); font-size:19px; font-weight:500; letter-spacing:.04em; color:var(--ink); text-decoration:none; white-space:nowrap}
+  .mono span{color:var(--brass); font-style:italic; padding:0 2px}
+  .nav-right{display:flex; align-items:center; gap:18px}
+  .nav-right a{
+    font-family:var(--ui); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); text-decoration:none; transition:color .2s;
   }
-  .ref { font-size: 8.2pt; color: #5b606b; font-style: italic; margin: 1px 0 4px 25px; }
-  /* white-space: pre-line keeps the line breaks you type inside .verse */
-  .verse { margin-left: 25px; font-size: 9.2pt; line-height: 1.42; color: #2b2f37; white-space: pre-line; }
-  .verse.jp { font-size: 10.4pt; line-height: 1.6; }
-  .note { margin-left: 25px; font-size: 8.2pt; color: #6b7079; margin-top: 4px; }
+  .nav-right a:hover{color:var(--ink)}
+  .lang-toggle{
+    font-family:var(--jpfont); font-size:13px; color:var(--ink);
+    background:transparent; border:1px solid var(--ice-line); border-radius:999px;
+    padding:5px 13px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .2s, color .2s;
+  }
+  .lang-toggle:hover{border-color:var(--brass)}
+  .lang-toggle .dot{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--brass);background:transparent;transition:background .2s}
+  .lang-toggle.on .dot{background:var(--brass)}
 
-  /* Footer */
-  footer { margin-top: 13px; padding-top: 9px; border-top: 1px solid #cdbfa6; }
-  .foot-title { font-size: 7.6pt; letter-spacing: 0.3em; text-transform: uppercase; color: #7a5a2e; font-weight: 600; margin-bottom: 5px; }
-  .foot-row { display: flex; gap: 8px; font-size: 8.6pt; color: #3c4049; padding: 1.5px 0; }
-  .foot-row .b { color: #7a5a2e; flex: 0 0 14px; }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; color:var(--paper);
+    background:
+      radial-gradient(120% 90% at 50% 118%, rgba(179,130,63,.28), rgba(179,130,63,0) 55%),
+      linear-gradient(180deg, #131a25 0%, var(--ink) 60%, #1d2735 100%);
+    padding:clamp(80px,16vh,150px) 24px clamp(54px,9vh,84px);
+    text-align:center; overflow:hidden;
+  }
+  .hero .eyebrow{
+    font-family:var(--ui); font-size:12px; letter-spacing:.42em; text-transform:uppercase;
+    color:var(--brass); padding-left:.42em; margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:var(--display); font-weight:340;
+    font-size:clamp(52px,13vw,108px); line-height:.98; letter-spacing:.005em;
+  }
+  .hero h1 .amp{font-style:italic; font-weight:300; color:var(--brass); display:inline-block; padding:0 .12em}
+  .hero .place{
+    font-family:var(--ui); font-size:13px; letter-spacing:.28em; text-transform:uppercase;
+    color:rgba(243,245,244,.7); margin-top:26px;
+  }
+
+  /* daylight bar — the short January day */
+  .daylight{display:flex; align-items:center; gap:14px; max-width:430px; margin:42px auto 0}
+  .dl-track{
+    flex:1; height:2px; border-radius:2px;
+    background:linear-gradient(90deg,
+      rgba(243,245,244,.12) 0%, rgba(243,245,244,.12) 24%,
+      var(--brass) 40%, #f1d7a6 50%, var(--brass) 60%,
+      rgba(243,245,244,.12) 76%, rgba(243,245,244,.12) 100%);
+    position:relative;
+  }
+  .dl-track::after{
+    content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:7px;height:7px;border-radius:50%; background:#f4dcaf; box-shadow:0 0 10px 2px rgba(241,215,166,.6);
+  }
+  .dl-time{font-family:var(--ui); font-size:10.5px; letter-spacing:.12em; color:rgba(243,245,244,.62); white-space:nowrap}
+  .dl-cap{font-family:var(--ui); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:rgba(243,245,244,.4); text-align:center; margin-top:12px}
+
+  /* ---------- WELCOME ---------- */
+  .welcome{padding:clamp(56px,9vh,90px) 0 clamp(30px,5vh,46px)}
+  .welcome p{font-size:20px; line-height:1.66; color:var(--ink-soft)}
+  .welcome .say-jp{margin-top:18px}
+
+  /* ---------- PART ---------- */
+  .part{padding:18px 0}
+  .part-head{margin:30px 0 6px}
+  .part-rom{font-family:var(--ui); font-size:12px; letter-spacing:.3em; color:var(--brass); font-weight:600}
+  .part-title{font-family:var(--display); font-size:30px; font-weight:380; margin-top:6px}
+  .part-title .ja{font-family:var(--jpfont); font-size:18px; color:var(--muted); font-weight:400; margin-left:10px}
+
+  .divider{display:flex; align-items:center; gap:0; margin:40px 0 10px}
+  .divider .line{flex:1; height:1.5px; border-radius:2px;
+    background:linear-gradient(90deg, transparent, var(--ice-line) 18%, var(--brass) 50%, var(--ice-line) 82%, transparent);}
+
+  /* ---------- ROWS / ITEMS ---------- */
+  .row{display:flex; align-items:baseline; gap:14px; padding:16px 0 4px; border-top:1px solid var(--ice-line)}
+  .row:first-of-type{border-top:none}
+  .num{font-family:var(--ui); font-size:13px; color:var(--muted-2); flex:0 0 26px; font-variant-numeric:tabular-nums}
+  .label{flex:1; font-family:var(--display); font-size:21px; font-weight:420}
+  .role{font-family:var(--ui); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2)}
+
+  .body{margin-left:40px; padding-bottom:6px}
+  .say{font-size:17.5px; line-height:1.62; color:var(--ink-soft); white-space:pre-line; margin-top:8px}
+  .say-jp{
+    font-family:var(--jpfont); font-size:16px; line-height:1.85; color:var(--jp);
+    white-space:pre-line; border-left:2px solid #e2d2b5; padding-left:15px; margin-top:14px;
+  }
+
+  /* readings — highlighted */
+  .reading{
+    margin:20px 0 6px; padding:22px 24px 24px;
+    background:linear-gradient(180deg,var(--paper-2),#f6f3ec);
+    border:1px solid #ece2cf; border-left:3px solid var(--brass);
+    border-radius:4px;
+  }
+  .r-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+  .r-num{font-family:var(--ui); font-size:13px; color:var(--brass); font-weight:600}
+  .r-title{flex:1; font-family:var(--display); font-size:23px; font-weight:440}
+  .r-tag{font-family:var(--ui); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#fff; background:var(--brass); padding:3px 9px; border-radius:3px; white-space:nowrap}
+  .r-ref{font-family:var(--ui); font-size:12.5px; font-style:normal; color:var(--muted); margin-top:8px}
+  .r-verse{font-size:19px; line-height:1.66; margin-top:14px; white-space:pre-line}
+  .r-verse.ja{font-family:var(--jpfont); font-size:19px; line-height:1.95}
+  .r-verse-jp{
+    font-family:var(--jpfont); font-size:16px; line-height:1.9; color:var(--jp);
+    white-space:pre-line; border-left:2px solid #e2d2b5; padding-left:15px; margin-top:16px;
+  }
+  .r-sub{font-size:14.5px; color:var(--muted); margin-top:14px; white-space:pre-line}
+  .r-sub.ja{font-family:var(--jpfont)}
+
+  /* music */
+  .music{margin-left:40px; margin-top:8px}
+  .music .piece{font-size:18px}
+  .music .note{color:var(--brass); margin-right:6px}
+  .music .t{font-weight:500}
+  .music .c{font-family:var(--ui); font-size:13px; color:var(--muted-2); font-style:italic}
+  .music .say-jp{margin-top:8px; font-size:15px}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    margin-top:70px; color:var(--paper);
+    background:linear-gradient(180deg,#1d2735, var(--ink));
+    padding:60px 24px 54px; text-align:center;
+  }
+  footer .fmono{font-family:var(--display); font-size:34px; font-weight:340}
+  footer .fmono .amp{color:var(--brass); font-style:italic; padding:0 .1em}
+  footer .fline{font-family:var(--ui); font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:rgba(243,245,244,.6); margin-top:16px}
+  footer .fbless{font-size:17px; color:rgba(243,245,244,.82); margin-top:26px; line-height:1.7}
+  footer .fbless .ja{display:block; font-family:var(--jpfont); font-size:15px; color:var(--brass); margin-top:6px}
+
+  /* language toggle hiding */
+  body.hide-jp .lang-jp{display:none}
+
+  /* reveal animation — only hide when JS is active, so no-JS users still see everything */
+  .js .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+
+  @media (max-width:560px){
+    body{font-size:17px}
+    .wrap{padding:0 18px}
+    .body,.music{margin-left:0}
+    .row{gap:10px}
+    .num{flex:0 0 22px}
+    .label{font-size:19px}
+    .part-title{font-size:25px}
+    .reading{padding:18px 16px 20px}
+    .nav-right a{display:none}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1; transform:none; transition:none}
+  }
+
+  /* preview capture sizing — ignored by browsers, used only when printed/rendered */
+  @media print{ @page{ size:820px 7400px; margin:0 } body{background:var(--paper)} }
 </style>
 </head>
 <body>
 
-  <header>
-    <div class="eyebrow">Vihkikaava &middot; Order of Service</div>
-    <div class="names">Mikael <span class="amp">&amp;</span> Mira</div>
-    <div class="sub">Helsinki &middot; Tammikuu 2027</div>
+  <header class="nav">
+    <a class="mono" href="#top">Mikael <span>&amp;</span> Mira</a>
+    <div class="nav-right">
+      <a href="#tervetuloa">Tervetuloa</a>
+      <a href="#ohjelma">Ohjelma</a>
+      <button class="lang-toggle on" id="jpToggle" aria-pressed="true" title="Näytä tai piilota japaninkielinen käännös">日本語訳 <span class="dot"></span></button>
+    </div>
   </header>
 
-  <!-- I JOHDANTO -->
-  <div class="part">I &nbsp;Johdanto</div>
-  <div class="item"><span class="num">1.</span><span class="label">Johdantomusiikki</span><span class="ftype">soitin&shy;musiikki / virsi</span></div>
-  <div class="verse fi">Joku hyvä biisi</div>
-  <div class="item"><span class="num">2.</span><span class="label">Alkusiunaus</span><span class="ftype">pappi</span></div>
-  <div class="verse fi">Siunaus</br>
-P Isän ja + Pojan ja Pyhän Hengen nimeen.
-S Aamen.</br>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="eyebrow">Hääseremonia &middot; 結婚式</div>
+    <h1>Mikael <span class="amp">&amp;</span> Mira</h1>
+    <div class="place">Helsinki &middot; Tammikuu 2027</div>
+    <div class="daylight">
+      <span class="dl-time">klo 9.20 &uarr;</span>
+      <div class="dl-track"></div>
+      <span class="dl-time">&darr; 15.40</span>
+    </div>
+    <div class="dl-cap">Talvipäivän valo &middot; 冬の日の光</div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- WELCOME -->
+    <section class="welcome reveal" id="tervetuloa">
+      <p>Tervetuloa jakamaan kanssamme päivä, jona lupaudumme toisillemme. Seremonia toimitetaan suomeksi ja japaniksi, jotta jokainen voi seurata mukana. Alla on seremonian kulku.</p>
+      <p class="say-jp lang-jp">わたしたちが互いに誓いを交わすこの日を、どうか一緒に過ごしてください。式は日本語とフィンランド語で行われ、どなたも一緒に追えるようになっています。以下は式次第です。</p>
+    </section>
+
+    <main id="ohjelma">
+
+      <!-- I JOHDANTO -->
+      <section class="part">
+        <div class="part-head reveal">
+          <div class="part-rom">I</div>
+          <div class="part-title">Johdanto<span class="ja">導入</span></div>
+        </div>
+
+        <div class="row reveal"><span class="num">1</span><span class="label">Johdantomusiikki</span><span class="role">Saapuminen</span></div>
+        <div class="music reveal">
+          <div class="piece"><span class="note">&#9834;</span><span class="t">A Thousand Years</span> <span class="c">&mdash; Christina Perri</span></div>
+          <div class="say-jp lang-jp">「A Thousand Years」クリスティーナ・ペリー（入場）</div>
+        </div>
+
+        <div class="row reveal"><span class="num">2</span><span class="label">Alkusiunaus</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">Siunaus
+P  Isän ja + Pojan ja Pyhän Hengen nimeen.
+S  Aamen.
+
 Vuorotervehdys
-P Herra olkoon teidän kanssanne.
-S Niin myös sinun henkesi kanssa.</div>
-  <div class="item"><span class="num">3.</span><span class="label">Johdantosanat</span><span class="ftype">pappi</span></div>
-  <div class="verse fi">P Rakkaat ystävät, Mira ja Mikael. Raamatussa sanotaan, että Jumala loi ihmisen mieheksi ja naiseksi ja tarkoitti heidät kumppaneiksi toisilleen. Jumalan sanaa kuunnellen ja yhdessä rukoillen pyydämme avioliitollenne hänen siunaustaan.</div>
+P  Herra olkoon teidän kanssanne.
+S  Niin myös sinun henkesi kanssa.</div>
+          <div class="say-jp lang-jp">祝福
+牧師：父と子と✝聖霊の御名によって。
+会衆：アーメン。
 
-  <div class="chosen">
-    <div class="top">
-      <span class="num">4.</span>
-      <span class="title">Psalmi &mdash; Laulujen laulu 8:6&ndash;7</span>
-      <span class="tag">Japaniksi &middot; 日本語</span>
-    </div>
-    <div class="ref">Sallittu psalmivaihtoehto kaavassa &mdash; the seal of love, read in Japanese</div>
-    <div class="verse jp">Antifoni
-Rajaton on Jumalan rakkaus,
-iäti hän on meille uskollinen.</br>
-Ps. 117:2
-わたしをあなたの心に置いて印のようにし、あなたの腕に置いて印のようにしてください。愛は死のように強く、ねたみは墓のように残酷だからです。そのきらめきは火のきらめき、最もはげしい炎です。</br>
-Pieni kunnia</br>
-Kunnia Isälle ja Pojalle
-ja Pyhälle Hengelle,
-niin kuin oli alussa, nyt on ja aina,
-iankaikkisesta iankaikkiseen. Aamen.
-Antifoni toistetaan.</div>
+交わりの挨拶
+牧師：主が皆さんと共におられますように。
+会衆：またあなたの霊と共に。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">3</span><span class="label">Johdantosanat</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">P  Rakkaat ystävät, Mira ja Mikael. Raamatussa sanotaan, että Jumala loi ihmisen mieheksi ja naiseksi ja tarkoitti heidät kumppaneiksi toisilleen. Jumalan sanaa kuunnellen ja yhdessä rukoillen pyydämme avioliitollenne hänen siunaustaan.</div>
+          <div class="say-jp lang-jp">牧師：親愛なる友、ミラとミカエル。聖書は、神が人を男と女とに造り、互いに伴侶となるよう定められたと告げています。神の言葉に耳を傾け、共に祈りながら、わたしたちはあなたがたの結婚に神の祝福を願い求めます。</div>
+        </div>
+
+        <div class="reading reveal">
+          <div class="r-head">
+            <span class="r-num">4</span>
+            <span class="r-title">Laulujen laulu 8:6&ndash;7</span>
+            <span class="r-tag">Japaniksi &middot; 日本語</span>
+          </div>
+          <div class="r-ref">Psalmi &middot; rakkauden sinetti, luetaan japaniksi</div>
+          <div class="r-verse ja">わたしをあなたの心に置いて印のようにし、あなたの腕に置いて印のようにしてください。愛は死のように強く、ねたみは墓のように残酷だからです。そのきらめきは火のきらめき、最もはげしい炎です。</div>
+          <div class="r-sub">Antifoni: Rajaton on Jumalan rakkaus, iäti hän on meille uskollinen. (Ps. 117:2)</div>
+          <div class="r-sub ja lang-jp">先唱：神の愛は限りなく、主はとこしえにわたしたちに真実であられます。（詩編117:2）</div>
+        </div>
+      </section>
+
+      <div class="divider reveal"><span class="line"></span></div>
+
+      <!-- II SANA -->
+      <section class="part">
+        <div class="part-head reveal">
+          <div class="part-rom">II</div>
+          <div class="part-title">Sana<span class="ja">御言葉</span></div>
+        </div>
+
+        <div class="row reveal"><span class="num">5</span><span class="label">Rukous</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">P  Rukoilkaamme.
+
+Jumala, taivaallinen Isä. Sinä loit ihmisen mieheksi ja naiseksi ja annoit heille avioliiton lahjaksi ja tehtäväksi. Siunaa Mikaelia ja Miraa, jotka tänään solmivat avioliiton. Kiitos, että olet antanut heidän löytää toisensa. Anna Kristuksen olla vieraanamme.
+
+Kristus, sinä rakkauden lähde. Sinä pyhitit kerran Kaanan häät läsnäolollasi. Ole läsnä myös tässä hääjuhlassa. Kuule meitä hyvyytesi tähden.
+
+S  Aamen.</div>
+          <div class="say-jp lang-jp">牧師：祈りましょう。
+
+神よ、天の父よ。あなたは人を男と女とに造り、結婚を賜物として、また務めとしてお与えになりました。今日結婚するミカエルとミラを祝福してください。二人が互いを見いだすことを許してくださり、感謝します。キリストをわたしたちの客としてくださいますように。
+
+キリストよ、愛の源よ。あなたはかつてカナの婚礼をその臨在によって聖別されました。この祝いにも臨んでください。あなたの慈しみのゆえに祈りを聞いてください。
+
+会衆：アーメン。</div>
+        </div>
+
+        <div class="reading reveal">
+          <div class="r-head">
+            <span class="r-num">6</span>
+            <span class="r-title">Saarnaaja 4:9&ndash;12</span>
+            <span class="r-tag">Suomeksi &middot; 1933/38</span>
+          </div>
+          <div class="r-ref">Raamatunluku &middot; luetaan vanhasta käännöksestä</div>
+          <div class="r-verse">Kahden on parempi kuin yksin, sillä heillä on vaivannäöstänsä hyvä palkka. Jos he lankeavat, niin toinen nostaa ylös toverinsa; mutta voi yksinäistä, jos hän lankeaa! Ei ole toista nostamassa häntä ylös. Myös, jos kaksi makaa yhdessä, on heillä lämmin; mutta kuinka voisi yksinäisellä olla lämmin? Ja yksinäisen kimppuun voi joku käydä, mutta kaksi pitää sille puolensa. Eikä kolmisäinen lanka pian katkea.</div>
+          <div class="r-verse-jp lang-jp">ひとりよりもふたりが良い。共に労苦すれば、その報いは良い。倒れれば、ひとりがその友を助け起こす。倒れても起こしてくれる者のないひとりは不幸だ。また、ふたりで寝れば暖かい。ひとりでどうして暖かくなれようか。ひとりが攻められれば、ふたりでこれに立ち向かう。三つよりの糸は切れにくい。（コヘレトの言葉 4:9&ndash;12）</div>
+        </div>
+
+        <div class="row reveal"><span class="num">7</span><span class="label">Puhe</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">Rakkaat ystävät, Mira ja Mikael. Tänään on teidän suuri juhlapäivänne. Nyt sitoudutte elämään yhdessä toisianne rakastaen ja kunnioittaen. Rakkaus on tunteista väkevimpiä &mdash; mutta se ei ole pelkkä tunne. Todellinen rakkaus kutsuu pitämään huolta toisistanne arjen keskellä. Puhukaa myös vaikeista asioista ja kuunnelkaa toisianne; anteeksi pyytäminen ja anteeksi antaminen ovat Jumalan lahjaa.</div>
+          <div class="say-jp lang-jp">親愛なる友、ミラとミカエル。今日はあなたがたの大いなる祝いの日です。今あなたがたは、互いを愛し敬いながら共に生きることを誓います。愛は最も力強い感情の一つですが、単なる感情ではありません。まことの愛は、日々の暮らしの中で互いを大切にするよう招きます。難しいことについても語り合い、互いに耳を傾けてください。赦しを願うことと赦すことは、神の賜物です。</div>
+        </div>
+      </section>
+
+      <div class="divider reveal"><span class="line"></span></div>
+
+      <!-- III VIHKIMINEN -->
+      <section class="part">
+        <div class="part-head reveal">
+          <div class="part-rom">III</div>
+          <div class="part-title">Vihkiminen<span class="ja">結婚の誓約</span></div>
+        </div>
+
+        <div class="reading reveal">
+          <div class="r-head">
+            <span class="r-num">8</span>
+            <span class="r-title">Vihkivalat</span>
+            <span class="r-tag">FI / JP</span>
+          </div>
+          <div class="r-ref">&raquo;&hellip;hyvinä ja pahoina päivinä, aina kuolemaan asti&laquo;</div>
+          <div class="r-verse">P (sulhaselle): Jumalan edessä ja tämän seurakunnan läsnä ollessa kysyn sinulta, Mikael, tahdotko ottaa Miran aviovaimoksesi, olla hänelle uskollinen ja rakastaa häntä hyvinä ja pahoina päivinä, aina kuolemaan asti? &mdash; Tahdon.
+
+P (morsiamelle): &hellip; kysyn sinulta, Mira, tahdotko ottaa Mikaelin aviomieheksesi, olla hänelle uskollinen ja rakastaa häntä hyvinä ja pahoina päivinä, aina kuolemaan asti? &mdash; Tahdon.</div>
+          <div class="r-verse-jp lang-jp">牧師（新郎へ）：神の御前、またこの会衆の前で、ミカエルに問います。あなたはミラを妻として迎え、彼女に忠実であり、良き日にも悪しき日にも、死が二人を分かつまで彼女を愛することを望みますか。 ― 望みます。
+
+牧師（新婦へ）：…ミラに問います。あなたはミカエルを夫として迎え、彼に忠実であり、良き日にも悪しき日にも、死が二人を分かつまで彼を愛することを望みますか。 ― 望みます。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">9</span><span class="label">Sormusrukous</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">Kaikkivaltias Jumala. Sinä itse olet rakkaus ja siunaat niitä, jotka turvautuvat sinuun. Ota suojelukseesi tämä liitto. Auta Mikaelia ja Miraa pysymään toisilleen uskollisina ja palvelemaan toisiaan kiitollisin mielin. Tätä rukoilemme Herramme Jeesuksen Kristuksen tähden. &mdash; Aamen.</div>
+          <div class="say-jp lang-jp">全能の神よ。あなたご自身が愛であり、あなたに身を寄せる者を祝福してくださいます。この結びをあなたの守りのうちに置いてください。ミカエルとミラが互いに忠実であり続け、感謝の心で互いに仕え合うことができるよう助けてください。わたしたちの主イエス・キリストのゆえに祈ります。 ― アーメン。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">10</span><span class="label">Sormuslupaukset</span><span class="role">Hääpari</span></div>
+
+        <div class="row reveal"><span class="num">11</span><span class="label">Avioliiton vahvistaminen</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">P  Te olette nyt ottaneet toisenne aviopuolisoiksi ja tunnustaneet sen julkisesti Jumalan kasvojen edessä ja tämän seurakunnan läsnä ollessa. Sillä valtuutuksella, joka minulle on uskottu, vahvistan teidän liittonne ja julistan teidät aviopuolisoiksi.</div>
+          <div class="say-jp lang-jp">牧師：あなたがたは今、互いを夫婦として迎え入れ、神の御前、またこの会衆の前でそれを公に言い表しました。わたしに委ねられた権能によって、わたしはあなたがたの結びを確認し、あなたがたを夫婦と宣言します。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">12</span><span class="label">Vihkilaulu</span><span class="role">Musiikki</span></div>
+        <div class="music reveal">
+          <div class="piece"><span class="note">&#9834;</span><span class="t">Castle in the Sky</span> <span class="c">&mdash; Joe Hisaishi &middot; Kimi wo Nosete</span></div>
+          <div class="say-jp lang-jp">天空の城ラピュタ「君をのせて」久石譲</div>
+        </div>
+      </section>
+
+      <div class="divider reveal"><span class="line"></span></div>
+
+      <!-- IV PÄÄTÖS -->
+      <section class="part">
+        <div class="part-head reveal">
+          <div class="part-rom">IV</div>
+          <div class="part-title">Päätös<span class="ja">結び</span></div>
+        </div>
+
+        <div class="reading reveal">
+          <div class="r-head">
+            <span class="r-num">13</span>
+            <span class="r-title">Yhteinen esirukous</span>
+            <span class="r-tag">Ps. 127</span>
+          </div>
+          <div class="r-verse">&raquo;Kaikkivaltias Jumala. Ellet sinä rakenna taloa, rakentajat näkevät turhaan vaivaa&hellip;&laquo;</div>
+          <div class="r-verse-jp lang-jp">「全能の神よ。あなたが家を建てられるのでなければ、建てる者の労苦はむなしい……」（詩編127:1）</div>
+        </div>
+
+        <div class="row reveal"><span class="num">14</span><span class="label">Isä meidän</span><span class="role">Yhteen ääneen</span></div>
+        <div class="body reveal">
+          <div class="say">Isä meidän, joka olet taivaissa. Pyhitetty olkoon sinun nimesi. Tulkoon sinun valtakuntasi. Tapahtukoon sinun tahtosi, myös maan päällä niin kuin taivaassa. Anna meille tänä päivänä meidän jokapäiväinen leipämme. Ja anna meille meidän syntimme anteeksi, niin kuin mekin anteeksi annamme niille, jotka ovat meitä vastaan rikkoneet. Äläkä saata meitä kiusaukseen, vaan päästä meidät pahasta. Sillä sinun on valtakunta ja voima ja kunnia iankaikkisesti. Aamen.</div>
+          <div class="say-jp lang-jp">天におられるわたしたちの父よ、み名が聖とされますように。み国が来ますように。みこころが天に行われるとおり地にも行われますように。わたしたちの日ごとの糧を今日もお与えください。わたしたちの罪をおゆるしください。わたしたちも人をゆるします。わたしたちを誘惑におちいらせず、悪からお救いください。国と力と栄光は、永遠にあなたのものです。アーメン。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">15</span><span class="label">Siunaus</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">P  Herra siunatkoon teitä ja varjelkoon teitä. Herra kirkastakoon kasvonsa teille ja olkoon teille armollinen. Herra kääntäköön kasvonsa teidän puoleenne ja antakoon teille rauhan. &mdash; Aamen.</div>
+          <div class="say-jp lang-jp">牧師：主があなたがたを祝福し、あなたがたを守られますように。主が御顔をあなたがたに照らし、あなたがたを恵まれますように。主が御顔をあなたがたに向けて、あなたがたに平安をお与えになりますように。 ― アーメン。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">16</span><span class="label">Lähettäminen</span><span class="role">Pappi</span></div>
+        <div class="body reveal">
+          <div class="say">P  Lähtekää rauhassa ja palvelkaa Herraa iloiten.</div>
+          <div class="say-jp lang-jp">牧師：平安のうちに行き、喜びをもって主に仕えなさい。</div>
+        </div>
+
+        <div class="row reveal"><span class="num">17</span><span class="label">Päätösmusiikki</span><span class="role">Poistuminen</span></div>
+        <div class="music reveal">
+          <div class="piece"><span class="note">&#9834;</span><span class="t">He&rsquo;s a Pirate</span> <span class="c">&mdash; Klaus Badelt / Pirates of the Caribbean</span></div>
+          <div class="say-jp lang-jp">「彼こそが海賊」（パイレーツ・オブ・カリビアン）クラウス・バデルト</div>
+        </div>
+      </section>
+
+    </main>
   </div>
-
-  <!-- II SANA -->
-  <div class="part">II &nbsp;Sana</div>
-  <div class="item"><span class="num">5.</span><span class="label">Rukous</span><span class="ftype">pappi</span></div>
-  <div class="verse">P Rukoilkaamme.
-1. Jumala, taivaallinen Isä.
-Sinä loit ihmisen mieheksi ja naiseksi
-ja annoit heille avioliiton lahjaksi ja tehtäväksi.
-Siunaa NN:ää ja NN:ää, jotka tänään solmivat avioliiton.
-Kiitos, että olet antanut heidän löytää toisensa.
-Siunaa tämä juhla, jota nyt vietämme.
-Anna Kristuksen olla vieraanamme.
-Tätä rukoilemme hänen nimessään.</br>
-2. Kristus, sinä rakkauden lähde.
-Sinä pyhitit kerran Kaanan häät läsnäolollasi.
-Ole läsnä myös tässä hääjuhlassa,
-jossa NN ja NN solmivat avioliiton.
-Vie meidät kaikki kerran suureen hääjuhlaasi taivaassa.
-Kuule meitä hyvyytesi tähden.</br></br>
-3. Jumala, kaiken luoja.
-Sinä annat avioliitossa miehen ja naisen
-kumppaniksi toisilleen.
-Me kiitämme sinua siitä,
-että myös avioliitto heijastaa
-luomistyösi hyvyyttä ja kauneutta.
-Anna siunauksesi NN:n ja NN:n liitolle,
-niin että he saisivat siinä täyttää sinun antamaasi tehtävää
-ja ottaa kiitollisina vastaan elämän lahjat.
-Kuule meitä, sinä, joka olet kaiken hyvyyden lähde.</br>
-4. Taivaallinen Isä.
-Rakkaudessasi olet asettanut avioliiton
-ja kutsunut puolisot elämään sanasi mukaan.
-Auta heitä rakastamaan toisiaan,
-niin kuin Kristus rakasti seurakuntaa.
-Auta puolisoita pitämään avioliittonsa pyhänä
-ja noudattamaan elämässään sinun tahtoasi.
-Anna heille voimaa pysyä toisilleen uskollisina.
-Kuule meitä Poikasi Jeesuksen</div>
-
-  <div class="chosen">
-    <div class="top">
-      <span class="num">6.</span>
-      <span class="title">Raamatunluku &mdash; Saarnaaja 4:9&ndash;12</span>
-      <span class="tag">Suomeksi &middot; 1933/38</span>
-    </div>
-    <div class="ref">&raquo;muu raamatunteksti&laquo; &mdash; pyydetään luettavaksi vanhasta käännöksestä</div>
-    <div class="verse">Kahden on parempi kuin yksin, sillä heillä on vaivannäöstänsä hyvä palkka. Jos he lankeavat, niin toinen nostaa ylös toverinsa; mutta voi yksinäistä, jos hän lankeaa! Ei ole toista nostamassa häntä ylös. Myös, jos kaksi makaa yhdessä, on heillä lämmin; mutta kuinka voisi yksinäisellä olla lämmin? Ja yksinäisen kimppuun voi joku käydä, mutta kaksi pitää sille puolensa. Eikä kolmisäinen lanka pian katkea.</div>
-  </div>
-
-  <div class="item"><span class="num">7.</span><span class="label">Puhe</span><span class="ftype">pappi</span></div>
-  <div class="verse">Rakkaat ystävät, NN ja NN (etunimet). Tänään on teidän suuri juhlapäivänne. Jumala on antanut teidän löytää toisenne. Nyt sitoudutte elämään yhdessä toisianne rakastaen ja kunnioittaen. Me iloitsemme teidän kanssanne ja rukoilemme liitollenne Jumalan siunausta.</br>
-Rakkaus on tunteista väkevimpiä. Se ei kuitenkaan ole pelkästään tunne. Todellinen rakkaus kutsuu teitä pitämään huolta toisistanne arkisen elämän keskellä. Rakkaudessa voi kasvaa, sen hyväksi voi toimia ja sitä tulee vaalia.</br>
-Jumala on rakkauden lähde. Hän on asettanut avioliiton luodessaan ihmisen mieheksi ja naiseksi. Parhaimmillaan juuri siinä liitossa toteutuvat ilo ja onni. Yhä edelleen hän antaa meidän kokea hyvyyttä ja rakkautta. Parhaimmassakin avioliitossa kohdataan ongelmia. Puhukaa keskenänne myös vaikeista asioista ja kuunnelkaa toisianne. Jeesus itse hyväksyi ystävikseen erehtyneitä ja puutteellisia ihmisiä. Näin hän antoi meille esimerkin. Anteeksi pyytäminen ja anteeksi antaminen ovat Jumalan lahjaa.</br>
-[Koti]seurakunta antaa teille tänä juhlapäivänänne Raamatun. Siellä on paljon neuvoja ja ohjeita yhteiselle tielle. Parasta Raamatussa eivät kuitenkaan ole neuvot tai ohjeet, vaan Jumalan lupaukset. Hän on luvannut olla omiensa kanssa myös elämän arjessa.</div>
-
-  <!-- III VIHKIMINEN -->
-  <div class="part">III &nbsp;Vihkiminen</div>
-
-  <div class="chosen">
-    <div class="top">
-      <span class="num">8.</span>
-      <span class="title">Kysymykset &mdash; vihkivalat</span>
-      <span class="tag">Kaksikielinen FI / JP</span>
-    </div>
-    <div class="ref">Vaihtoehto 2 &mdash; &raquo;&hellip;hyvinä ja pahoina päivinä, aina kuolemaan asti&laquo;</div>
-    <div class="note">Pappi esittää kysymykset ja valan suomeksi ja japaniksi &middot; vastaus: <em>Tahdon.</em></div>
-  </div>
-
-  <div class="item"><span class="num">9.</span><span class="label">Sormusrukous</span><span class="ftype">pappi</span></div>
-  <div class="verse">Rukoilkaamme sen liiton puolesta, jonka merkkinä tämä sormus on (nämä sormukset ovat).</br>
-Kaikkivaltias Jumala.
-Sinä itse olet rakkaus ja siunaat niitä,
-jotka turvautuvat sinuun.
-Ota suojelukseesi tämä liitto.
-Auta NN:ää ja NN:ää (etunimet) elämään avioliitossaan
-pyhän tahtosi mukaan,
-pysymään toisilleen uskollisina
-ja palvelemaan toisiaan kiitollisin mielin.
-Tätä rukoilemme Herramme Jeesuksen Kristuksen tähden.
-S Aamen.</div>
-  <div class="item"><span class="num">10.</span><span class="label">Sormuslupaukset</span><span class="ftype">hääpari</span></div>
-  <div class="item"><span class="num">11.</span><span class="label">Avioliiton vahvistaminen ja siunaaminen</span><span class="ftype">pappi</span></div>
-  <div class="verse">Avioliiton vahvistaminen
-P Te olette nyt ottaneet toisenne aviopuolisoiksi ja tunnustaneet sen julkisesti Jumalan kasvojen edessä ja tämän seurakunnan (näiden todistajien) läsnä ollessa. Vihkisormus on annettu avioliittonne merkiksi. Sillä valtuutuksella, joka minulle on uskottu, vahvistan teidän liittonne ja julistan teidät aviopuolisoiksi.</div>
-  <div class="item"><span class="num">12.</span><span class="label">Virsi / vihkilaulu</span><span class="ftype">musiikki</span></div>
-
-  <!-- IV PÄÄTÖS -->
-  <div class="part">IV &nbsp;Päätös</div>
-
-  <div class="chosen">
-    <div class="top">
-      <span class="num">13.</span>
-      <span class="title">Yhteinen esirukous &mdash; vaihtoehto 2</span>
-      <span class="tag">Ps. 127 &middot; kaiku</span>
-    </div>
-    <div class="verse">&raquo;Kaikkivaltias Jumala. Ellet sinä rakenna taloa, rakentajat näkevät turhaan vaivaa&hellip;&laquo;</div>
-  </div>
-
-  <div class="item"><span class="num">14.</span><span class="label">Isä meidän</span><span class="ftype">yhteen ääneen</span></div>
-  <div class="verse">
-  S Isä meidän, joka olet taivaissa.
-  Pyhitetty olkoon sinun nimesi.
-  Tulkoon sinun valtakuntasi.
-  Tapahtukoon sinun tahtosi,
-  myös maan päällä niin kuin taivaassa.
-  Anna meille tänä päivänä meidän jokapäiväinen leipämme.
-  Ja anna meille meidän syntimme anteeksi,
-  niin kuin mekin anteeksi annamme niille,
-  jotka ovat meitä vastaan rikkoneet.
-  Äläkä saata meitä kiusaukseen,
-  vaan päästä meidät pahasta.
-  Sillä sinun on valtakunta ja voima ja kunnia iankaikkisesti.
-  Aamen.</div>
-  
-  <div class="item"><span class="num">15.</span><span class="label">Siunaus &mdash; ja Raamatun luovutus</span><span class="ftype">pappi</span></div>
-  <div class="item"><span class="num">16.</span><span class="label">Lähettäminen</span><span class="ftype">pappi</span></div>
-  <div class="verse">
-  P Lähtekää rauhassa ja palvelkaa Herraa iloiten.
-  </div>
-  <div class="item"><span class="num">17.</span><span class="label">Päätösmusiikki</span><span class="ftype">soitin&shy;musiikki / virsi</span></div>
 
   <footer>
-    <div class="foot-title">Papin kanssa vahvistettavat &middot; To confirm</div>
-    <div class="foot-row"><span class="b">1.</span><span>Saarnaaja 4:9&ndash;12 lisätään kohtaan 6 &raquo;muuna raamatuntekstinä&laquo; (kaavan rubriikki sallii).</span></div>
-    <div class="foot-row"><span class="b">2.</span><span>Sama lukukappale luetaan vuoden 1933/38 käännöksestä virallisen 1992-tekstin sijaan.</span></div>
-    <div class="foot-row"><span class="b">3.</span><span>Kanttorille: kohdat 1, 12, 17 (musiikki) sovitaan erikseen.</span></div>
+    <div class="fmono">Mikael <span class="amp">&amp;</span> Mira</div>
+    <div class="fline">Helsinki &middot; Tammikuu 2027</div>
+    <div class="fbless">Lähtekää rauhassa ja palvelkaa Herraa iloiten.
+      <span class="ja">平安のうちに行き、喜びをもって主に仕えなさい。</span>
+    </div>
   </footer>
+
+  <script>
+    // Language toggle — show/hide the Japanese following-translation
+    (function(){
+      var btn = document.getElementById('jpToggle');
+      btn.addEventListener('click', function(){
+        var hidden = document.body.classList.toggle('hide-jp');
+        btn.classList.toggle('on', !hidden);
+        btn.setAttribute('aria-pressed', String(!hidden));
+      });
+    })();
+
+    // Scroll reveal
+    (function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if(reduce || !('IntersectionObserver' in window)){
+        els.forEach(function(e){ e.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(e){ io.observe(e); });
+    })();
+  </script>
 
 </body>
 </html>
