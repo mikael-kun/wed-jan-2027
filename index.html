@@ -113,59 +113,11 @@
   .welcome p{font-size:20px; line-height:1.66; color:var(--ink-soft)}
   .welcome .say-jp{margin-top:18px}
 
-  /* ---------- PART ---------- */
-  .part{padding:18px 0}
-  .part-head{margin:30px 0 6px}
-  .part-rom{font-family:var(--ui); font-size:12px; letter-spacing:.3em; color:var(--brass); font-weight:600}
-  .part-title{font-family:var(--display); font-size:30px; font-weight:380; margin-top:6px}
-  .part-title .ja{font-family:var(--jpfont); font-size:18px; color:var(--muted); font-weight:400; margin-left:10px}
-
-  .divider{display:flex; align-items:center; gap:0; margin:40px 0 10px}
-  .divider .line{flex:1; height:1.5px; border-radius:2px;
-    background:linear-gradient(90deg, transparent, var(--ice-line) 18%, var(--brass) 50%, var(--ice-line) 82%, transparent);}
-
-  /* ---------- ROWS / ITEMS ---------- */
-  .row{display:flex; align-items:baseline; gap:14px; padding:16px 0 4px; border-top:1px solid var(--ice-line)}
-  .row:first-of-type{border-top:none}
-  .num{font-family:var(--ui); font-size:13px; color:var(--muted-2); flex:0 0 26px; font-variant-numeric:tabular-nums}
-  .label{flex:1; font-family:var(--display); font-size:21px; font-weight:420}
-  .role{font-family:var(--ui); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2)}
-
-  .body{margin-left:40px; padding-bottom:6px}
-  .say{font-size:17.5px; line-height:1.62; color:var(--ink-soft); white-space:pre-line; margin-top:8px}
+  /* ---------- shared JP following-translation ---------- */
   .say-jp{
     font-family:var(--jpfont); font-size:16px; line-height:1.85; color:var(--jp);
     white-space:pre-line; border-left:2px solid #e2d2b5; padding-left:15px; margin-top:14px;
   }
-
-  /* readings — highlighted */
-  .reading{
-    margin:20px 0 6px; padding:22px 24px 24px;
-    background:linear-gradient(180deg,var(--paper-2),#f6f3ec);
-    border:1px solid #ece2cf; border-left:3px solid var(--brass);
-    border-radius:4px;
-  }
-  .r-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
-  .r-num{font-family:var(--ui); font-size:13px; color:var(--brass); font-weight:600}
-  .r-title{flex:1; font-family:var(--display); font-size:23px; font-weight:440}
-  .r-tag{font-family:var(--ui); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#fff; background:var(--brass); padding:3px 9px; border-radius:3px; white-space:nowrap}
-  .r-ref{font-family:var(--ui); font-size:12.5px; font-style:normal; color:var(--muted); margin-top:8px}
-  .r-verse{font-size:19px; line-height:1.66; margin-top:14px; white-space:pre-line}
-  .r-verse.ja{font-family:var(--jpfont); font-size:19px; line-height:1.95}
-  .r-verse-jp{
-    font-family:var(--jpfont); font-size:16px; line-height:1.9; color:var(--jp);
-    white-space:pre-line; border-left:2px solid #e2d2b5; padding-left:15px; margin-top:16px;
-  }
-  .r-sub{font-size:14.5px; color:var(--muted); margin-top:14px; white-space:pre-line}
-  .r-sub.ja{font-family:var(--jpfont)}
-
-  /* music */
-  .music{margin-left:40px; margin-top:8px}
-  .music .piece{font-size:18px}
-  .music .note{color:var(--brass); margin-right:6px}
-  .music .t{font-weight:500}
-  .music .c{font-family:var(--ui); font-size:13px; color:var(--muted-2); font-style:italic}
-  .music .say-jp{margin-top:8px; font-size:15px}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -248,12 +200,6 @@
   @media (max-width:560px){
     body{font-size:17px}
     .wrap{padding:0 18px}
-    .body,.music{margin-left:0}
-    .row{gap:10px}
-    .num{flex:0 0 22px}
-    .label{font-size:19px}
-    .part-title{font-size:25px}
-    .reading{padding:18px 16px 20px}
     .major{margin-top:52px}
     .tl-time{flex:0 0 50px}
     #map{height:300px}
@@ -280,6 +226,7 @@
       <a href="#ohjelma">Seremonia<span class="ja">式</span></a>
       <a href="#vastaanotto">Vastaanotto<span class="ja">披露宴</span></a>
       <a href="#paikat">Paikat<span class="ja">地図</span></a>
+      <a href="vihkikaava.pdf" target="_blank" rel="noopener">Vihkikaava<span class="ja">式次第</span></a>
     </nav>
   </header>
 
@@ -300,8 +247,8 @@
 
     <!-- WELCOME -->
     <section class="welcome reveal" id="tervetuloa">
-      <p>Tervetuloa jakamaan kanssamme päivä, jona lupaudumme toisillemme. Seremonia toimitetaan suomeksi ja japaniksi, jotta jokainen voi seurata mukana. Alla on seremonian kulku.</p>
-      <p class="say-jp lang-jp">わたしたちが互いに誓いを交わすこの日を、どうか一緒に過ごしてください。式は日本語とフィンランド語で行われ、どなたも一緒に追えるようになっています。以下は式次第です。</p>
+      <p>Tervetuloa jakamaan kanssamme päivä, jona lupaudumme toisillemme. Seremonia toimitetaan suomeksi ja japaniksi, jotta jokainen voi seurata mukana.</p>
+      <p class="say-jp lang-jp">わたしたちが互いに誓いを交わすこの日を、どうか一緒に過ごしてください。式は日本語とフィンランド語で行われ、どなたも一緒に追えるようになっています。</p>
     </section>
 
     <!-- DAY AT A GLANCE -->
@@ -356,198 +303,19 @@
       </div>
     </div>
 
-    <main id="ohjelma">
-      <section class="major">
-        <div class="eyebrow2 reveal">Kirkossa</div>
-        <h2 class="reveal">Seremonia<span class="ja">結婚式</span></h2>
-        <p class="lead reveal">Vihkiminen toimitetaan suomeksi ja japaniksi Johanneksenkirkossa.</p>
-      </section>
-
-      <!-- I JOHDANTO -->
-      <section class="part">
-        <div class="part-head reveal">
-          <div class="part-rom">I</div>
-          <div class="part-title">Johdanto<span class="ja">導入</span></div>
-        </div>
-
-        <div class="row reveal"><span class="num">1</span><span class="label">Johdantomusiikki</span><span class="role">Saapuminen</span></div>
-        <div class="music reveal">
-          <div class="piece"><span class="note">&#9834;</span><span class="t">A Thousand Years</span> <span class="c">&mdash; Christina Perri</span></div>
-          <div class="say-jp lang-jp">「A Thousand Years」クリスティーナ・ペリー（入場）</div>
-        </div>
-
-        <div class="row reveal"><span class="num">2</span><span class="label">Alkusiunaus</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Siunaus
-Pappi: Isän ja + Pojan ja Pyhän Hengen nimeen.
-Seurakunta: Aamen.
-
-Vuorotervehdys
-Pappi: Herra olkoon teidän kanssanne.
-Seurakunta: Niin myös sinun henkesi kanssa.</div>
-          <div class="say-jp lang-jp">祝福
-牧師：父と子と✝聖霊の御名によって。
-会衆：アーメン。
-
-交わりの挨拶
-牧師：主が皆さんと共におられますように。
-会衆：またあなたの霊と共に。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">3</span><span class="label">Johdantosanat</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Pappi: Rakkaat ystävät, Mira ja Mikael. Raamatussa sanotaan, että Jumala loi ihmisen mieheksi ja naiseksi ja tarkoitti heidät kumppaneiksi toisilleen. Jumalan sanaa kuunnellen ja yhdessä rukoillen pyydämme avioliitollenne hänen siunaustaan.</div>
-          <div class="say-jp lang-jp">牧師：親愛なる友、ミラとミカエル。聖書は、神が人を男と女とに造り、互いに伴侶となるよう定められたと告げています。神の言葉に耳を傾け、共に祈りながら、わたしたちはあなたがたの結婚に神の祝福を願い求めます。</div>
-        </div>
-
-        <div class="reading reveal">
-          <div class="r-head">
-            <span class="r-num">4</span>
-            <span class="r-title">Laulujen laulu 8:6&ndash;7</span>
-            <span class="r-tag">Japaniksi &middot; 日本語</span>
-          </div>
-          <div class="r-ref">Psalmi &middot; rakkauden sinetti, luetaan japaniksi</div>
-          <div class="r-verse ja">わたしをあなたの心に置いて印のようにし、あなたの腕に置いて印のようにしてください。愛は死のように強く、ねたみは墓のように残酷だからです。そのきらめきは火のきらめき、最もはげしい炎です。</div>
-          <div class="r-sub">Antifoni: Rajaton on Jumalan rakkaus, iäti hän on meille uskollinen. (Ps. 117:2)</div>
-          <div class="r-sub ja lang-jp">先唱：神の愛は限りなく、主はとこしえにわたしたちに真実であられます。（詩編117:2）</div>
-        </div>
-      </section>
-
-      <div class="divider reveal"><span class="line"></span></div>
-
-      <!-- II SANA -->
-      <section class="part">
-        <div class="part-head reveal">
-          <div class="part-rom">II</div>
-          <div class="part-title">Sana<span class="ja">御言葉</span></div>
-        </div>
-
-        <div class="row reveal"><span class="num">5</span><span class="label">Rukous</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Pappi: Rukoilkaamme.
-
-Jumala, taivaallinen Isä. Sinä loit ihmisen mieheksi ja naiseksi ja annoit heille avioliiton lahjaksi ja tehtäväksi. Siunaa Mikaelia ja Miraa, jotka tänään solmivat avioliiton. Kiitos, että olet antanut heidän löytää toisensa. Anna Kristuksen olla vieraanamme.
-
-Kristus, sinä rakkauden lähde. Sinä pyhitit kerran Kaanan häät läsnäolollasi. Ole läsnä myös tässä hääjuhlassa. Kuule meitä hyvyytesi tähden.
-
-Seurakunta: Aamen.</div>
-          <div class="say-jp lang-jp">牧師：祈りましょう。
-
-神よ、天の父よ。あなたは人を男と女とに造り、結婚を賜物として、また務めとしてお与えになりました。今日結婚するミカエルとミラを祝福してください。二人が互いを見いだすことを許してくださり、感謝します。キリストをわたしたちの客としてくださいますように。
-
-キリストよ、愛の源よ。あなたはかつてカナの婚礼をその臨在によって聖別されました。この祝いにも臨んでください。あなたの慈しみのゆえに祈りを聞いてください。
-
-会衆：アーメン。</div>
-        </div>
-
-        <div class="reading reveal">
-          <div class="r-head">
-            <span class="r-num">6</span>
-            <span class="r-title">Saarnaaja 4:9&ndash;12</span>
-            <span class="r-tag">Suomeksi &middot; 1933/38</span>
-          </div>
-          <div class="r-ref">Raamatunluku &middot; luetaan vanhasta käännöksestä</div>
-          <div class="r-verse">Kahden on parempi kuin yksin, sillä heillä on vaivannäöstänsä hyvä palkka. Jos he lankeavat, niin toinen nostaa ylös toverinsa; mutta voi yksinäistä, jos hän lankeaa! Ei ole toista nostamassa häntä ylös. Myös, jos kaksi makaa yhdessä, on heillä lämmin; mutta kuinka voisi yksinäisellä olla lämmin? Ja yksinäisen kimppuun voi joku käydä, mutta kaksi pitää sille puolensa. Eikä kolmisäinen lanka pian katkea.</div>
-          <div class="r-verse-jp lang-jp">ひとりよりもふたりが良い。共に労苦すれば、その報いは良い。倒れれば、ひとりがその友を助け起こす。倒れても起こしてくれる者のないひとりは不幸だ。また、ふたりで寝れば暖かい。ひとりでどうして暖かくなれようか。ひとりが攻められれば、ふたりでこれに立ち向かう。三つよりの糸は切れにくい。（コヘレトの言葉 4:9&ndash;12）</div>
-        </div>
-
-        <div class="row reveal"><span class="num">7</span><span class="label">Puhe</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Rakkaat ystävät, Mira ja Mikael. Tänään on teidän suuri juhlapäivänne. Nyt sitoudutte elämään yhdessä toisianne rakastaen ja kunnioittaen. Rakkaus on tunteista väkevimpiä &mdash; mutta se ei ole pelkkä tunne. Todellinen rakkaus kutsuu pitämään huolta toisistanne arjen keskellä. Puhukaa myös vaikeista asioista ja kuunnelkaa toisianne; anteeksi pyytäminen ja anteeksi antaminen ovat Jumalan lahjaa.</div>
-          <div class="say-jp lang-jp">親愛なる友、ミラとミカエル。今日はあなたがたの大いなる祝いの日です。今あなたがたは、互いを愛し敬いながら共に生きることを誓います。愛は最も力強い感情の一つですが、単なる感情ではありません。まことの愛は、日々の暮らしの中で互いを大切にするよう招きます。難しいことについても語り合い、互いに耳を傾けてください。赦しを願うことと赦すことは、神の賜物です。</div>
-        </div>
-      </section>
-
-      <div class="divider reveal"><span class="line"></span></div>
-
-      <!-- III VIHKIMINEN -->
-      <section class="part">
-        <div class="part-head reveal">
-          <div class="part-rom">III</div>
-          <div class="part-title">Vihkiminen<span class="ja">結婚の誓約</span></div>
-        </div>
-
-        <div class="reading reveal">
-          <div class="r-head">
-            <span class="r-num">8</span>
-            <span class="r-title">Vihkivalat</span>
-            <span class="r-tag">FI / JP</span>
-          </div>
-          <div class="r-ref">&raquo;&hellip;hyvinä ja pahoina päivinä, aina kuolemaan asti&laquo;</div>
-          <div class="r-verse">Pappi (sulhaselle): Jumalan edessä ja tämän seurakunnan läsnä ollessa kysyn sinulta, Mikael, tahdotko ottaa Miran aviovaimoksesi, olla hänelle uskollinen ja rakastaa häntä hyvinä ja pahoina päivinä, aina kuolemaan asti? &mdash; Tahdon.
-
-Pappi (morsiamelle): &hellip; kysyn sinulta, Mira, tahdotko ottaa Mikaelin aviomieheksesi, olla hänelle uskollinen ja rakastaa häntä hyvinä ja pahoina päivinä, aina kuolemaan asti? &mdash; Tahdon.</div>
-          <div class="r-verse-jp lang-jp">牧師（新郎へ）：神の御前、またこの会衆の前で、ミカエルに問います。あなたはミラを妻として迎え、彼女に忠実であり、良き日にも悪しき日にも、死が二人を分かつまで彼女を愛することを望みますか。 ― 望みます。
-
-牧師（新婦へ）：…ミラに問います。あなたはミカエルを夫として迎え、彼に忠実であり、良き日にも悪しき日にも、死が二人を分かつまで彼を愛することを望みますか。 ― 望みます。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">9</span><span class="label">Sormusrukous</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Kaikkivaltias Jumala. Sinä itse olet rakkaus ja siunaat niitä, jotka turvautuvat sinuun. Ota suojelukseesi tämä liitto. Auta Mikaelia ja Miraa pysymään toisilleen uskollisina ja palvelemaan toisiaan kiitollisin mielin. Tätä rukoilemme Herramme Jeesuksen Kristuksen tähden. &mdash; Aamen.</div>
-          <div class="say-jp lang-jp">全能の神よ。あなたご自身が愛であり、あなたに身を寄せる者を祝福してくださいます。この結びをあなたの守りのうちに置いてください。ミカエルとミラが互いに忠実であり続け、感謝の心で互いに仕え合うことができるよう助けてください。わたしたちの主イエス・キリストのゆえに祈ります。 ― アーメン。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">10</span><span class="label">Sormuslupaukset</span><span class="role">Hääpari</span></div>
-
-        <div class="row reveal"><span class="num">11</span><span class="label">Avioliiton vahvistaminen</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Pappi: Te olette nyt ottaneet toisenne aviopuolisoiksi ja tunnustaneet sen julkisesti Jumalan kasvojen edessä ja tämän seurakunnan läsnä ollessa. Sillä valtuutuksella, joka minulle on uskottu, vahvistan teidän liittonne ja julistan teidät aviopuolisoiksi.</div>
-          <div class="say-jp lang-jp">牧師：あなたがたは今、互いを夫婦として迎え入れ、神の御前、またこの会衆の前でそれを公に言い表しました。わたしに委ねられた権能によって、わたしはあなたがたの結びを確認し、あなたがたを夫婦と宣言します。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">12</span><span class="label">Vihkilaulu</span><span class="role">Musiikki</span></div>
-        <div class="music reveal">
-          <div class="piece"><span class="note">&#9834;</span><span class="t">Castle in the Sky</span> <span class="c">&mdash; Joe Hisaishi &middot; Kimi wo Nosete</span></div>
-          <div class="say-jp lang-jp">天空の城ラピュタ「君をのせて」久石譲</div>
-        </div>
-      </section>
-
-      <div class="divider reveal"><span class="line"></span></div>
-
-      <!-- IV PÄÄTÖS -->
-      <section class="part">
-        <div class="part-head reveal">
-          <div class="part-rom">IV</div>
-          <div class="part-title">Päätös<span class="ja">結び</span></div>
-        </div>
-
-        <div class="reading reveal">
-          <div class="r-head">
-            <span class="r-num">13</span>
-            <span class="r-title">Yhteinen esirukous</span>
-            <span class="r-tag">Ps. 127</span>
-          </div>
-          <div class="r-verse">&raquo;Kaikkivaltias Jumala. Ellet sinä rakenna taloa, rakentajat näkevät turhaan vaivaa&hellip;&laquo;</div>
-          <div class="r-verse-jp lang-jp">「全能の神よ。あなたが家を建てられるのでなければ、建てる者の労苦はむなしい……」（詩編127:1）</div>
-        </div>
-
-        <div class="row reveal"><span class="num">14</span><span class="label">Isä meidän</span><span class="role">Yhteen ääneen</span></div>
-        <div class="body reveal">
-          <div class="say">Isä meidän, joka olet taivaissa. Pyhitetty olkoon sinun nimesi. Tulkoon sinun valtakuntasi. Tapahtukoon sinun tahtosi, myös maan päällä niin kuin taivaassa. Anna meille tänä päivänä meidän jokapäiväinen leipämme. Ja anna meille meidän syntimme anteeksi, niin kuin mekin anteeksi annamme niille, jotka ovat meitä vastaan rikkoneet. Äläkä saata meitä kiusaukseen, vaan päästä meidät pahasta. Sillä sinun on valtakunta ja voima ja kunnia iankaikkisesti. Aamen.</div>
-          <div class="say-jp lang-jp">天におられるわたしたちの父よ、み名が聖とされますように。み国が来ますように。みこころが天に行われるとおり地にも行われますように。わたしたちの日ごとの糧を今日もお与えください。わたしたちの罪をおゆるしください。わたしたちも人をゆるします。わたしたちを誘惑におちいらせず、悪からお救いください。国と力と栄光は、永遠にあなたのものです。アーメン。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">15</span><span class="label">Siunaus</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Pappi: Herra siunatkoon teitä ja varjelkoon teitä. Herra kirkastakoon kasvonsa teille ja olkoon teille armollinen. Herra kääntäköön kasvonsa teidän puoleenne ja antakoon teille rauhan. &mdash; Aamen.</div>
-          <div class="say-jp lang-jp">牧師：主があなたがたを祝福し、あなたがたを守られますように。主が御顔をあなたがたに照らし、あなたがたを恵まれますように。主が御顔をあなたがたに向けて、あなたがたに平安をお与えになりますように。 ― アーメン。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">16</span><span class="label">Lähettäminen</span><span class="role">Pappi</span></div>
-        <div class="body reveal">
-          <div class="say">Pappi: Lähtekää rauhassa ja palvelkaa Herraa iloiten.</div>
-          <div class="say-jp lang-jp">牧師：平安のうちに行き、喜びをもって主に仕えなさい。</div>
-        </div>
-
-        <div class="row reveal"><span class="num">17</span><span class="label">Päätösmusiikki</span><span class="role">Poistuminen</span></div>
-        <div class="music reveal">
-          <div class="piece"><span class="note">&#9834;</span><span class="t">He&rsquo;s a Pirate</span> <span class="c">&mdash; Klaus Badelt / Pirates of the Caribbean</span></div>
-          <div class="say-jp lang-jp">「彼こそが海賊」（パイレーツ・オブ・カリビアン）クラウス・バデルト</div>
-        </div>
-      </section>
-
-    </main>
+    <!-- CEREMONY -->
+    <section class="major" id="ohjelma">
+      <div class="eyebrow2 reveal">Kirkossa</div>
+      <h2 class="reveal">Seremonia<span class="ja">結婚式</span></h2>
+      <p class="lead reveal">Vihkiminen toimitetaan suomeksi ja japaniksi Johanneksenkirkossa. Seremonian kulun löydät vihkikaavasta — sen saa myös kirkosta painettuna.</p>
+      <p class="lead say-jp lang-jp reveal">式は日本語とフィンランド語で、ヨハネス教会にて執り行われます。式の流れは式次第でご覧いただけます（教会でも配布します）。</p>
+      <div class="btnrow reveal" style="margin-top:8px">
+        <a class="btn primary" href="vihkikaava.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>
+          Vihkikaava (PDF) &middot; 式次第
+        </a>
+      </div>
+    </section>
 
     <!-- RECEPTION -->
     <section class="major" id="vastaanotto">
@@ -603,6 +371,7 @@ Pappi (morsiamelle): &hellip; kysyn sinulta, Mira, tahdotko ottaa Mikaelin aviom
         <div class="btnrow">
           <a class="btn primary" href="https://www.google.com/maps/dir/?api=1&destination=Korkeavuorenkatu%2012%2C%20Helsinki&destination_place_id=ChIJ8ecBN8gLkkYRDdxbsJiqrhE" target="_blank" rel="noopener">Reittiohjeet (Google)</a>
           <a class="btn" href="https://maps.apple.com/?address=Korkeavuorenkatu%2012,%20Helsinki&ll=60.1617158,24.9449663" target="_blank" rel="noopener">Apple Maps</a>
+          <a class="btn" href="vihkikaava.pdf" target="_blank" rel="noopener">Vihkikaava &middot; 式次第</a>
         </div>
       </div>
     </div>
