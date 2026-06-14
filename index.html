@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 14mm 16mm 12mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Noto Serif CJK JP", Georgia, serif;
+    color: #20242b;
+    font-size: 10.2pt;
+    line-height: 1.34;
+  }
+  .accent { color: #7a5a2e; }
+
+  /* Header */
+  header { text-align: center; padding-bottom: 9px; border-bottom: 1.4px solid #20242b; }
+  .eyebrow {
+    font-size: 7.4pt; letter-spacing: 0.42em; text-transform: uppercase;
+    color: #7a5a2e; margin-bottom: 9px; padding-left: 0.42em;
+  }
+  .names { font-size: 23pt; font-weight: 600; letter-spacing: 0.02em; line-height: 1.05; }
+  .names .amp { color: #7a5a2e; font-style: italic; font-weight: 400; }
+  .sub { font-size: 8.6pt; letter-spacing: 0.22em; text-transform: uppercase; color: #5b606b; margin-top: 8px; }
+
+  /* Part headings */
+  .part {
+    margin-top: 13px; margin-bottom: 4px;
+    font-size: 7.8pt; letter-spacing: 0.34em; text-transform: uppercase;
+    color: #7a5a2e; font-weight: 600;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .part::after { content: ""; flex: 1; height: 0.7px; background: #cdbfa6; }
+
+  /* Items */
+  .item { display: flex; align-items: baseline; gap: 9px; padding: 1.6px 0; }
+  .num { width: 16px; flex: 0 0 16px; text-align: right; color: #9aa0ab; font-size: 8.6pt; }
+  .label { flex: 1; }
+  .ftype { color: #9aa0ab; font-size: 8.6pt; font-style: italic; }
+
+  /* Chosen item block */
+  .chosen { margin: 3px 0 3px 0; padding: 7px 12px 8px 13px; border-left: 2.2px solid #7a5a2e; background: #f7f3ec; }
+  .chosen .top { display: flex; align-items: baseline; gap: 9px; }
+  .chosen .num { color: #7a5a2e; font-weight: 600; }
+  .chosen .title { flex: 1; font-weight: 600; }
+  .chosen .tag {
+    font-size: 6.8pt; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #fff; background: #7a5a2e; padding: 2px 6px; border-radius: 2px; white-space: nowrap;
+  }
+  .ref { font-size: 8.2pt; color: #5b606b; font-style: italic; margin: 1px 0 4px 25px; }
+  /* white-space: pre-line keeps the line breaks you type inside .verse */
+  .verse { margin-left: 25px; font-size: 9.2pt; line-height: 1.42; color: #2b2f37; white-space: pre-line; }
+  .verse.jp { font-size: 10.4pt; line-height: 1.6; }
+  .note { margin-left: 25px; font-size: 8.2pt; color: #6b7079; margin-top: 4px; }
+
+  /* Footer */
+  footer { margin-top: 13px; padding-top: 9px; border-top: 1px solid #cdbfa6; }
+  .foot-title { font-size: 7.6pt; letter-spacing: 0.3em; text-transform: uppercase; color: #7a5a2e; font-weight: 600; margin-bottom: 5px; }
+  .foot-row { display: flex; gap: 8px; font-size: 8.6pt; color: #3c4049; padding: 1.5px 0; }
+  .foot-row .b { color: #7a5a2e; flex: 0 0 14px; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="eyebrow">Vihkikaava &middot; Order of Service</div>
+    <div class="names">Mikael <span class="amp">&amp;</span> Mira</div>
+    <div class="sub">Helsinki &middot; Tammikuu 2027</div>
+  </header>
+
+  <!-- I JOHDANTO -->
+  <div class="part">I &nbsp;Johdanto</div>
+  <div class="item"><span class="num">1.</span><span class="label">Johdantomusiikki</span><span class="ftype">soitin&shy;musiikki / virsi</span></div>
+  <div class="verse fi">Joku hyvä biisi</div>
+  <div class="item"><span class="num">2.</span><span class="label">Alkusiunaus</span><span class="ftype">pappi</span></div>
+  <div class="verse fi">Siunaus</br>
+P Isän ja + Pojan ja Pyhän Hengen nimeen.
+S Aamen.</br>
+Vuorotervehdys
+P Herra olkoon teidän kanssanne.
+S Niin myös sinun henkesi kanssa.</div>
+  <div class="item"><span class="num">3.</span><span class="label">Johdantosanat</span><span class="ftype">pappi</span></div>
+  <div class="verse fi">P Rakkaat ystävät, Mira ja Mikael. Raamatussa sanotaan, että Jumala loi ihmisen mieheksi ja naiseksi ja tarkoitti heidät kumppaneiksi toisilleen. Jumalan sanaa kuunnellen ja yhdessä rukoillen pyydämme avioliitollenne hänen siunaustaan.</div>
+
+  <div class="chosen">
+    <div class="top">
+      <span class="num">4.</span>
+      <span class="title">Psalmi &mdash; Laulujen laulu 8:6&ndash;7</span>
+      <span class="tag">Japaniksi &middot; 日本語</span>
+    </div>
+    <div class="ref">Sallittu psalmivaihtoehto kaavassa &mdash; the seal of love, read in Japanese</div>
+    <div class="verse jp">Antifoni
+Rajaton on Jumalan rakkaus,
+iäti hän on meille uskollinen.</br>
+Ps. 117:2
+わたしをあなたの心に置いて印のようにし、あなたの腕に置いて印のようにしてください。愛は死のように強く、ねたみは墓のように残酷だからです。そのきらめきは火のきらめき、最もはげしい炎です。</br>
+Pieni kunnia</br>
+Kunnia Isälle ja Pojalle
+ja Pyhälle Hengelle,
+niin kuin oli alussa, nyt on ja aina,
+iankaikkisesta iankaikkiseen. Aamen.
+Antifoni toistetaan.</div>
+  </div>
+
+  <!-- II SANA -->
+  <div class="part">II &nbsp;Sana</div>
+  <div class="item"><span class="num">5.</span><span class="label">Rukous</span><span class="ftype">pappi</span></div>
+  <div class="verse">P Rukoilkaamme.
+1. Jumala, taivaallinen Isä.
+Sinä loit ihmisen mieheksi ja naiseksi
+ja annoit heille avioliiton lahjaksi ja tehtäväksi.
+Siunaa NN:ää ja NN:ää, jotka tänään solmivat avioliiton.
+Kiitos, että olet antanut heidän löytää toisensa.
+Siunaa tämä juhla, jota nyt vietämme.
+Anna Kristuksen olla vieraanamme.
+Tätä rukoilemme hänen nimessään.</br>
+2. Kristus, sinä rakkauden lähde.
+Sinä pyhitit kerran Kaanan häät läsnäolollasi.
+Ole läsnä myös tässä hääjuhlassa,
+jossa NN ja NN solmivat avioliiton.
+Vie meidät kaikki kerran suureen hääjuhlaasi taivaassa.
+Kuule meitä hyvyytesi tähden.</br>
+3. Jumala, kaiken luoja.
+Sinä annat avioliitossa miehen ja naisen
+kumppaniksi toisilleen.
+Me kiitämme sinua siitä,
+että myös avioliitto heijastaa
+luomistyösi hyvyyttä ja kauneutta.
+Anna siunauksesi NN:n ja NN:n liitolle,
+niin että he saisivat siinä täyttää sinun antamaasi tehtävää
+ja ottaa kiitollisina vastaan elämän lahjat.
+Kuule meitä, sinä, joka olet kaiken hyvyyden lähde.</br>
+4. Taivaallinen Isä.
+Rakkaudessasi olet asettanut avioliiton
+ja kutsunut puolisot elämään sanasi mukaan.
+Auta heitä rakastamaan toisiaan,
+niin kuin Kristus rakasti seurakuntaa.
+Auta puolisoita pitämään avioliittonsa pyhänä
+ja noudattamaan elämässään sinun tahtoasi.
+Anna heille voimaa pysyä toisilleen uskollisina.
+Kuule meitä Poikasi Jeesuksen</div>
+
+  <div class="chosen">
+    <div class="top">
+      <span class="num">6.</span>
+      <span class="title">Raamatunluku &mdash; Saarnaaja 4:9&ndash;12</span>
+      <span class="tag">Suomeksi &middot; 1933/38</span>
+    </div>
+    <div class="ref">&raquo;muu raamatunteksti&laquo; &mdash; pyydetään luettavaksi vanhasta käännöksestä</div>
+    <div class="verse">Kahden on parempi kuin yksin, sillä heillä on vaivannäöstänsä hyvä palkka. Jos he lankeavat, niin toinen nostaa ylös toverinsa; mutta voi yksinäistä, jos hän lankeaa! Ei ole toista nostamassa häntä ylös. Myös, jos kaksi makaa yhdessä, on heillä lämmin; mutta kuinka voisi yksinäisellä olla lämmin? Ja yksinäisen kimppuun voi joku käydä, mutta kaksi pitää sille puolensa. Eikä kolmisäinen lanka pian katkea.</div>
+  </div>
+
+  <div class="item"><span class="num">7.</span><span class="label">Puhe</span><span class="ftype">pappi</span></div>
+  <div class="verse">Rakkaat ystävät, NN ja NN (etunimet). Tänään on teidän suuri juhlapäivänne. Jumala on antanut teidän löytää toisenne. Nyt sitoudutte elämään yhdessä toisianne rakastaen ja kunnioittaen. Me iloitsemme teidän kanssanne ja rukoilemme liitollenne Jumalan siunausta.</br>
+Rakkaus on tunteista väkevimpiä. Se ei kuitenkaan ole pelkästään tunne. Todellinen rakkaus kutsuu teitä pitämään huolta toisistanne arkisen elämän keskellä. Rakkaudessa voi kasvaa, sen hyväksi voi toimia ja sitä tulee vaalia.</br>
+Jumala on rakkauden lähde. Hän on asettanut avioliiton luodessaan ihmisen mieheksi ja naiseksi. Parhaimmillaan juuri siinä liitossa toteutuvat ilo ja onni. Yhä edelleen hän antaa meidän kokea hyvyyttä ja rakkautta. Parhaimmassakin avioliitossa kohdataan ongelmia. Puhukaa keskenänne myös vaikeista asioista ja kuunnelkaa toisianne. Jeesus itse hyväksyi ystävikseen erehtyneitä ja puutteellisia ihmisiä. Näin hän antoi meille esimerkin. Anteeksi pyytäminen ja anteeksi antaminen ovat Jumalan lahjaa.</br>
+[Koti]seurakunta antaa teille tänä juhlapäivänänne Raamatun. Siellä on paljon neuvoja ja ohjeita yhteiselle tielle. Parasta Raamatussa eivät kuitenkaan ole neuvot tai ohjeet, vaan Jumalan lupaukset. Hän on luvannut olla omiensa kanssa myös elämän arjessa.</div>
+
+  <!-- III VIHKIMINEN -->
+  <div class="part">III &nbsp;Vihkiminen</div>
+
+  <div class="chosen">
+    <div class="top">
+      <span class="num">8.</span>
+      <span class="title">Kysymykset &mdash; vihkivalat</span>
+      <span class="tag">Kaksikielinen FI / JP</span>
+    </div>
+    <div class="ref">Vaihtoehto 2 &mdash; &raquo;&hellip;hyvinä ja pahoina päivinä, aina kuolemaan asti&laquo;</div>
+    <div class="note">Pappi esittää kysymykset ja valan suomeksi ja japaniksi &middot; vastaus: <em>Tahdon.</em></div>
+  </div>
+
+  <div class="item"><span class="num">9.</span><span class="label">Sormusrukous</span><span class="ftype">pappi</span></div>
+  <div class="verse">Rukoilkaamme sen liiton puolesta, jonka merkkinä tämä sormus on (nämä sormukset ovat).</br>
+Kaikkivaltias Jumala.
+Sinä itse olet rakkaus ja siunaat niitä,
+jotka turvautuvat sinuun.
+Ota suojelukseesi tämä liitto.
+Auta NN:ää ja NN:ää (etunimet) elämään avioliitossaan
+pyhän tahtosi mukaan,
+pysymään toisilleen uskollisina
+ja palvelemaan toisiaan kiitollisin mielin.
+Tätä rukoilemme Herramme Jeesuksen Kristuksen tähden.
+S Aamen.</div>
+  <div class="item"><span class="num">10.</span><span class="label">Sormuslupaukset</span><span class="ftype">hääpari</span></div>
+  <div class="item"><span class="num">11.</span><span class="label">Avioliiton vahvistaminen ja siunaaminen</span><span class="ftype">pappi</span></div>
+  <div class="verse">Avioliiton vahvistaminen
+P Te olette nyt ottaneet toisenne aviopuolisoiksi ja tunnustaneet sen julkisesti Jumalan kasvojen edessä ja tämän seurakunnan (näiden todistajien) läsnä ollessa. Vihkisormus on annettu avioliittonne merkiksi. Sillä valtuutuksella, joka minulle on uskottu, vahvistan teidän liittonne ja julistan teidät aviopuolisoiksi.</div>
+  <div class="item"><span class="num">12.</span><span class="label">Virsi / vihkilaulu</span><span class="ftype">musiikki</span></div>
+
+  <!-- IV PÄÄTÖS -->
+  <div class="part">IV &nbsp;Päätös</div>
+
+  <div class="chosen">
+    <div class="top">
+      <span class="num">13.</span>
+      <span class="title">Yhteinen esirukous &mdash; vaihtoehto 2</span>
+      <span class="tag">Ps. 127 &middot; kaiku</span>
+    </div>
+    <div class="verse">&raquo;Kaikkivaltias Jumala. Ellet sinä rakenna taloa, rakentajat näkevät turhaan vaivaa&hellip;&laquo;</div>
+  </div>
+
+  <div class="item"><span class="num">14.</span><span class="label">Isä meidän</span><span class="ftype">yhteen ääneen</span></div>
+  <div class="verse">
+  S Isä meidän, joka olet taivaissa.
+  Pyhitetty olkoon sinun nimesi.
+  Tulkoon sinun valtakuntasi.
+  Tapahtukoon sinun tahtosi,
+  myös maan päällä niin kuin taivaassa.
+  Anna meille tänä päivänä meidän jokapäiväinen leipämme.
+  Ja anna meille meidän syntimme anteeksi,
+  niin kuin mekin anteeksi annamme niille,
+  jotka ovat meitä vastaan rikkoneet.
+  Äläkä saata meitä kiusaukseen,
+  vaan päästä meidät pahasta.
+  Sillä sinun on valtakunta ja voima ja kunnia iankaikkisesti.
+  Aamen.</div>
+  
+  <div class="item"><span class="num">15.</span><span class="label">Siunaus &mdash; ja Raamatun luovutus</span><span class="ftype">pappi</span></div>
+  <div class="item"><span class="num">16.</span><span class="label">Lähettäminen</span><span class="ftype">pappi</span></div>
+  <div class="verse">
+  P Lähtekää rauhassa ja palvelkaa Herraa iloiten.
+  </div>
+  <div class="item"><span class="num">17.</span><span class="label">Päätösmusiikki</span><span class="ftype">soitin&shy;musiikki / virsi</span></div>
+
+  <footer>
+    <div class="foot-title">Papin kanssa vahvistettavat &middot; To confirm</div>
+    <div class="foot-row"><span class="b">1.</span><span>Saarnaaja 4:9&ndash;12 lisätään kohtaan 6 &raquo;muuna raamatuntekstinä&laquo; (kaavan rubriikki sallii).</span></div>
+    <div class="foot-row"><span class="b">2.</span><span>Sama lukukappale luetaan vuoden 1933/38 käännöksestä virallisen 1992-tekstin sijaan.</span></div>
+    <div class="foot-row"><span class="b">3.</span><span>Kanttorille: kohdat 1, 12, 17 (musiikki) sovitaan erikseen.</span></div>
+  </footer>
+
+</body>
+</html>
