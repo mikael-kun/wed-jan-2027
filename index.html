@@ -108,6 +108,20 @@
   .dl-time{font-family:var(--ui); font-size:10.5px; letter-spacing:.12em; color:rgba(243,245,244,.62); white-space:nowrap}
   .dl-cap{font-family:var(--ui); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:rgba(243,245,244,.4); text-align:center; margin-top:12px}
 
+  /* daylight mark — recurring section signature (light background) */
+  .daymark{display:flex; align-items:center; justify-content:center; margin:0 auto 26px}
+  .daymark .dm-track{
+    display:flex; align-items:center; justify-content:center;
+    width:clamp(130px,42%,240px); height:8px; border-radius:2px;
+    background:linear-gradient(90deg, transparent 0%, var(--ice-line) 16%, var(--brass) 50%, var(--ice-line) 84%, transparent 100%);
+    background-size:100% 2px; background-position:center; background-repeat:no-repeat;
+  }
+  .daymark .dm-sun{
+    width:7px; height:7px; border-radius:50%;
+    background:radial-gradient(circle at 50% 40%, #e7b667, var(--brass));
+    box-shadow:0 0 8px 1.5px rgba(179,130,63,.45);
+  }
+
   /* ---------- WELCOME ---------- */
   .welcome{padding:clamp(56px,9vh,90px) 0 clamp(30px,5vh,46px)}
   .welcome p{font-size:20px; line-height:1.66; color:var(--ink-soft)}
@@ -128,8 +142,11 @@
   footer .fmono{font-family:var(--display); font-size:34px; font-weight:340}
   footer .fmono .amp{color:var(--brass); font-style:italic; padding:0 .1em}
   footer .fline{font-family:var(--ui); font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:rgba(243,245,244,.6); margin-top:16px}
-  footer .fbless{font-size:17px; color:rgba(243,245,244,.82); margin-top:26px; line-height:1.7}
-  footer .fbless .ja{display:block; font-family:var(--jpfont); font-size:15px; color:var(--brass); margin-top:6px}
+  footer .fquotes{margin-top:36px}
+  footer .fdiv{width:34px; height:1px; margin:22px auto; background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+  footer .fq{font-family:var(--display); font-style:italic; font-weight:340; font-size:19px; line-height:1.5; color:rgba(243,245,244,.9); max-width:30em; margin:0 auto}
+  footer .fq.ja{font-family:var(--jpfont); font-style:normal; font-size:16px; line-height:1.85; color:rgba(243,245,244,.86); max-width:24em}
+  footer .fqa{font-family:var(--ui); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-top:11px}
 
   /* ---------- MAJOR SECTION HEADINGS ---------- */
   .major{margin:68px 0 4px; scroll-margin-top:92px}
@@ -236,9 +253,9 @@
     <h1>Mira <span class="amp">&amp;</span> Mikael</h1>
     <div class="place">Helsinki &middot; 30.1.2027</div>
     <div class="daylight">
-      <span class="dl-time">klo 9.20 &uarr;</span>
+      <span class="dl-time">klo 8.41 &uarr;</span>
       <div class="dl-track"></div>
-      <span class="dl-time">&darr; 15.40</span>
+      <span class="dl-time">&darr; 16.27</span>
     </div>
     <div class="dl-cap">Talvipäivän valo &middot; 冬の日の光</div>
   </section>
@@ -253,6 +270,7 @@
 
     <!-- DAY AT A GLANCE -->
     <section class="major" id="paiva">
+      <div class="daymark reveal"><span class="dm-track"><span class="dm-sun"></span></span></div>
       <div class="eyebrow2 reveal">Päivän kulku</div>
       <h2 class="reveal">Hääpäivä<span class="ja">一日の流れ</span></h2>
     </section>
@@ -305,6 +323,7 @@
 
     <!-- CEREMONY -->
     <section class="major" id="ohjelma">
+      <div class="daymark reveal"><span class="dm-track"><span class="dm-sun"></span></span></div>
       <div class="eyebrow2 reveal">Kirkossa</div>
       <h2 class="reveal">Seremonia<span class="ja">結婚式</span></h2>
       <p class="lead reveal">Vihkiminen toimitetaan suomeksi ja japaniksi Johanneksenkirkossa. Seremonian kulun löydät vihkikaavasta — sen saa myös kirkosta painettuna.</p>
@@ -319,6 +338,7 @@
 
     <!-- RECEPTION -->
     <section class="major" id="vastaanotto">
+      <div class="daymark reveal"><span class="dm-track"><span class="dm-sun"></span></span></div>
       <div class="eyebrow2 reveal">Juhla jatkuu</div>
       <h2 class="reveal">Vastaanotto<span class="ja">披露宴</span></h2>
       <p class="lead reveal">Seremonian jälkeen siirrymme Sokos Hotel Vaakunan juhlasaliin illalliselle ja juhlimaan. Kirkolta on lyhyt taksi- tai raitiovaunumatka keskustaan.</p>
@@ -354,6 +374,7 @@
 
     <!-- LOCATIONS -->
     <section class="major" id="paikat">
+      <div class="daymark reveal"><span class="dm-track"><span class="dm-sun"></span></span></div>
       <div class="eyebrow2 reveal">Kartta &amp; saapuminen</div>
       <h2 class="reveal">Paikat<span class="ja">地図とアクセス</span></h2>
     </section>
@@ -405,8 +426,12 @@
   <footer>
     <div class="fmono">Mira <span class="amp">&amp;</span> Mikael</div>
     <div class="fline">Helsinki &middot; 30.1.2027</div>
-    <div class="fbless">Lähtekää rauhassa ja palvelkaa Herraa iloiten.
-      <span class="ja">平安のうちに行き、喜びをもって主に仕えなさい。</span>
+    <div class="fquotes">
+      <p class="fq">&ldquo;Not all treasure is silver and gold, mate.&rdquo;</p>
+      <p class="fqa">&mdash; Cpt. Jack Sparrow</p>
+      <div class="fdiv"></div>
+      <p class="fq ja">土に根をおろし、風と共に生きよう。種と共に冬を越え、鳥と共に春をうたおう。</p>
+      <p class="fqa">&mdash; Sheeta &middot; Laputa: Castle in the Sky</p>
     </div>
   </footer>
 
