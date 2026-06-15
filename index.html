@@ -122,6 +122,28 @@
     box-shadow:0 0 8px 1.5px rgba(179,130,63,.45);
   }
 
+  /* ---------- MUSIC PLAYER ---------- */
+  .tracks{margin-top:10px}
+  .track{border:1px solid var(--ice-line); border-radius:11px; background:var(--paper-2); margin-top:13px; overflow:hidden; transition:border-color .2s}
+  .track.open{border-color:var(--brass)}
+  .track-row{display:flex; align-items:center; gap:15px; padding:15px 17px; cursor:pointer; background:none; border:none; width:100%; text-align:left; font:inherit; color:inherit}
+  .track-play{flex:0 0 auto; width:42px; height:42px; border-radius:50%; border:1px solid var(--ice-line); background:var(--paper); display:flex; align-items:center; justify-content:center; color:var(--brass-deep); transition:all .2s}
+  .track-row:hover .track-play{border-color:var(--brass); background:var(--ink); color:#fff}
+  .track-play svg{width:15px; height:15px}
+  .track-play .ico-play{margin-left:2px}
+  .track-play .ico-close{display:none}
+  .track.open .track-play .ico-play{display:none}
+  .track.open .track-play .ico-close{display:block}
+  .track.open .track-play{border-color:var(--brass); background:var(--ink); color:#fff}
+  .track-meta{flex:1; min-width:0}
+  .track-when{font-family:var(--ui); font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--brass); font-weight:600}
+  .track-title{font-family:var(--display); font-size:18.5px; font-weight:460; margin-top:2px; line-height:1.2}
+  .track-artist{font-family:var(--ui); font-size:12.5px; color:var(--muted); margin-top:3px}
+  .track-embed{max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 13px}
+  .track.open .track-embed{max-height:200px; padding:0 13px 13px}
+  .track-embed iframe{border:0; border-radius:12px; width:100%; height:152px; display:block}
+  .music-note{font-family:var(--ui); font-size:11.5px; color:var(--muted-2); margin-top:16px; text-align:center; line-height:1.5}
+
   /* ---------- WELCOME ---------- */
   .welcome{padding:clamp(56px,9vh,90px) 0 clamp(30px,5vh,46px)}
   .welcome p{font-size:20px; line-height:1.66; color:var(--ink-soft)}
@@ -241,6 +263,7 @@
     <nav class="jump" aria-label="Sivun osat">
       <a href="#paiva">Päivä<span class="ja">一日</span></a>
       <a href="#ohjelma">Seremonia<span class="ja">式</span></a>
+      <a href="#musiikki">Musiikki<span class="ja">音楽</span></a>
       <a href="#vastaanotto">Vastaanotto<span class="ja">披露宴</span></a>
       <a href="#paikat">Paikat<span class="ja">地図</span></a>
       <a href="vihkikaava.pdf" target="_blank" rel="noopener">Vihkikaava<span class="ja">式次第</span></a>
@@ -335,6 +358,64 @@
         </a>
       </div>
     </section>
+
+    <!-- MUSIC -->
+    <section class="major" id="musiikki">
+      <div class="daymark reveal"><span class="dm-track"><span class="dm-sun"></span></span></div>
+      <div class="eyebrow2 reveal">Seremonian sävelet</div>
+      <h2 class="reveal">Musiikki<span class="ja">音楽</span></h2>
+      <p class="lead reveal">Seremonian musiikki kolmena hetkenä — saapuminen, vihkilaulu ja poistuminen. Voit kuunnella ne tästä.</p>
+      <p class="lead say-jp lang-jp reveal">式の三つの場面の音楽 — 入場、結婚の歌、退場。ここで試聴できます。</p>
+    </section>
+
+    <div class="tracks reveal">
+      <div class="track">
+        <button class="track-row" type="button" aria-expanded="false">
+          <span class="track-play">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </span>
+          <span class="track-meta">
+            <span class="track-when">Saapuminen &middot; 入場</span>
+            <span class="track-title">A Thousand Years</span>
+            <span class="track-artist">Christina Perri</span>
+          </span>
+        </button>
+        <div class="track-embed" data-src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator"></div>
+      </div>
+
+      <div class="track">
+        <button class="track-row" type="button" aria-expanded="false">
+          <span class="track-play">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </span>
+          <span class="track-meta">
+            <span class="track-when">Vihkilaulu &middot; 結婚の歌</span>
+            <span class="track-title">君をのせて &middot; Castle in the Sky</span>
+            <span class="track-artist">井上あずみ &middot; Azumi Inoue</span>
+          </span>
+        </button>
+        <div class="track-embed" data-src="https://open.spotify.com/embed/track/13TpApQ6vfOpg5G8STTEQ8?utm_source=generator"></div>
+      </div>
+
+      <div class="track">
+        <button class="track-row" type="button" aria-expanded="false">
+          <span class="track-play">
+            <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </span>
+          <span class="track-meta">
+            <span class="track-when">Poistuminen &middot; 退場</span>
+            <span class="track-title">He&rsquo;s a Pirate</span>
+            <span class="track-artist">Klaus Badelt &middot; Pirates of the Caribbean</span>
+          </span>
+        </button>
+        <div class="track-embed" data-src="https://open.spotify.com/embed/track/08QaHlMPWuO5PUxjl61bXn?utm_source=generator"></div>
+      </div>
+
+      <p class="music-note">Toisto Spotifyn kautta &middot; Spotify で再生</p>
+    </div>
 
     <!-- RECEPTION -->
     <section class="major" id="vastaanotto">
@@ -436,6 +517,30 @@
   </footer>
 
   <script>
+    // Music player — lazy-load Spotify embed on first open, single track open at a time
+    (function(){
+      var tracks = document.querySelectorAll('.track');
+      tracks.forEach(function(track){
+        var btn = track.querySelector('.track-row');
+        var embed = track.querySelector('.track-embed');
+        btn.addEventListener('click', function(){
+          var isOpen = track.classList.contains('open');
+          if(!isOpen){
+            // load iframe once
+            if(embed && !embed.querySelector('iframe')){
+              var f = document.createElement('iframe');
+              f.setAttribute('loading','lazy');
+              f.setAttribute('allow','autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+              f.src = embed.getAttribute('data-src');
+              embed.appendChild(f);
+            }
+          }
+          track.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(!isOpen));
+        });
+      });
+    })();
+
     // Language toggle — show/hide the Japanese following-translation
     (function(){
       var btn = document.getElementById('jpToggle');
