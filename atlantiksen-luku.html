@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlantiksen luku · Mira &amp; Mikael</title>
+<meta name="description" content="Miran ja Mikaelin synastria, luettuna tarinana · 星の読み">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..420&family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#19212e; --ink-soft:#2b3543; --paper:#f3f5f4; --paper-2:#fbfcfb;
+    --ice:#e7eef2; --ice-line:#d3dde4; --brass:#b3823f; --brass-deep:#8a6233;
+    --star:#f0dcae; --jp:#8a6a44; --muted:#6b7682; --muted-2:#9aa6b0;
+    --display:'Fraunces',Georgia,'Noto Serif JP',serif;
+    --body:'Newsreader',Georgia,'Noto Serif JP',serif;
+    --ui:'Inter',system-ui,-apple-system,sans-serif;
+    --jpfont:'Noto Serif JP','Noto Serif CJK JP',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:19px;line-height:1.66;-webkit-font-smoothing:antialiased;font-optical-sizing:auto}
+  .wrap{max-width:680px;margin:0 auto;padding:0 26px}
+  svg{display:block}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    position:relative;color:var(--paper);text-align:center;overflow:hidden;
+    background:
+      radial-gradient(130% 80% at 50% 8%, rgba(240,220,174,.10), rgba(240,220,174,0) 46%),
+      radial-gradient(120% 95% at 50% 122%, rgba(179,130,63,.26), rgba(179,130,63,0) 55%),
+      linear-gradient(180deg,#10161f 0%, var(--ink) 58%, #1d2735 100%);
+    padding:clamp(72px,13vh,128px) 26px clamp(60px,10vh,96px);
+  }
+  .cover .eyebrow{font-family:var(--ui);font-size:11.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--brass);padding-left:.4em;margin-bottom:30px}
+  .cluster{width:clamp(132px,26vw,178px);height:clamp(132px,26vw,178px);margin:0 auto 30px;animation:rise 1.4s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px) scale(.95)}to{opacity:1;transform:none}}
+  .cover h1{font-family:var(--display);font-weight:330;font-size:clamp(46px,11vw,86px);line-height:.98;letter-spacing:.01em}
+  .cover h1 .amp{font-style:italic;font-weight:300;color:var(--brass);padding:0 .1em}
+  .cover .sub{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(17px,3.6vw,22px);color:rgba(243,245,244,.82);margin-top:20px;line-height:1.4}
+  .cover .meta{font-family:var(--ui);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:rgba(243,245,244,.55);margin-top:26px}
+
+  /* ---------- PROLOGUE ---------- */
+  .prologue{padding:clamp(56px,9vh,92px) 0 clamp(8px,2vh,16px)}
+  .prologue .pn{font-family:var(--ui);font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:20px}
+  .prologue p{font-size:20px;line-height:1.7;color:var(--ink-soft)}
+  .prologue p em{font-style:italic;color:var(--ink)}
+  .prologue .sig{display:block;font-family:var(--display);font-style:italic;font-size:21px;color:var(--brass-deep);margin-top:22px}
+
+  /* ---------- MOVEMENTS ---------- */
+  .mv{padding:clamp(46px,7vh,72px) 0;border-top:1px solid var(--ice-line)}
+  .mv-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .mv-num{font-family:var(--display);font-style:italic;font-weight:400;font-size:30px;color:var(--brass);line-height:1;flex:0 0 auto}
+  .mv-titles{flex:1 1 240px;min-width:0}
+  .mv-titles h2{font-family:var(--display);font-weight:380;font-size:clamp(27px,6vw,38px);line-height:1.04;letter-spacing:.005em}
+  .mv-titles .gloss{font-family:var(--ui);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .mv-titles .gloss .ja{font-family:var(--jpfont);letter-spacing:.05em;text-transform:none;color:var(--jp);margin-left:8px;font-size:14px}
+  .deg{font-family:var(--ui);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep);background:var(--ice);border:1px solid var(--ice-line);border-radius:999px;padding:6px 13px;margin-top:22px;display:inline-block;font-variant-numeric:tabular-nums}
+  .mv p{font-size:18.5px;line-height:1.7;color:var(--ink-soft);margin-top:18px}
+  .mv p em{font-style:italic;color:var(--ink-soft)}
+  .mv p strong{font-weight:500;color:var(--ink);font-style:normal}
+  .mv .fi{font-family:var(--display);font-style:italic;color:var(--brass-deep)}
+
+  /* ---------- CODA ---------- */
+  .coda{margin-top:8px;color:var(--paper);background:linear-gradient(180deg,#1d2735,var(--ink));border-radius:14px;padding:clamp(40px,7vh,64px) clamp(26px,5vw,46px)}
+  .coda .pn{font-family:var(--ui);font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:18px}
+  .coda h2{font-family:var(--display);font-weight:360;font-size:clamp(26px,6vw,36px)}
+  .coda h2 .ja{font-family:var(--jpfont);font-size:.52em;color:var(--brass);margin-left:.4em}
+  .coda p{font-size:18.5px;line-height:1.72;color:rgba(243,245,244,.84);margin-top:18px}
+  .coda p em{color:#fff;font-style:italic}
+  .coda .close{font-family:var(--display);font-size:22px;color:var(--star);margin-top:24px;line-height:1.5}
+  .coda .close .ja{font-family:var(--jpfont);display:block;font-size:18px;color:rgba(240,220,174,.8);margin-top:6px}
+
+  /* ---------- LEDGER ---------- */
+  .ledger{margin:clamp(56px,9vh,88px) 0 0;padding-top:clamp(40px,6vh,56px);border-top:1px solid var(--ice-line)}
+  .ledger .pn{font-family:var(--ui);font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);font-weight:600}
+  .ledger h3{font-family:var(--display);font-weight:380;font-size:clamp(24px,5vw,32px);margin-top:10px}
+  .ledger .note{font-size:15.5px;color:var(--muted);margin-top:10px;line-height:1.55}
+  .row{display:grid;grid-template-columns:1fr auto;gap:8px 18px;align-items:baseline;padding:15px 0;border-top:1px solid var(--ice-line)}
+  .row:first-of-type{margin-top:22px}
+  .row .pair{font-family:var(--ui);font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+  .row .pair b{font-family:var(--display);font-style:normal;font-weight:460;color:var(--ink);font-size:14.5px}
+  .row .pair .who{color:var(--brass-deep);font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+  .row .orb{font-family:var(--ui);font-size:13px;font-weight:600;color:var(--brass-deep);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+  .row .orb span{display:block;font-weight:400;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-top:2px}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:clamp(56px,9vh,84px);color:var(--paper);background:linear-gradient(180deg,#1d2735,var(--ink));padding:54px 26px 50px;text-align:center}
+  footer .fm{font-family:var(--display);font-size:30px;font-weight:340}
+  footer .fm .amp{color:var(--brass);font-style:italic;padding:0 .1em}
+  footer .fl{font-family:var(--ui);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(243,245,244,.55);margin-top:14px}
+  footer .fb{font-family:var(--jpfont);font-size:15px;color:rgba(240,220,174,.7);margin-top:20px}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:520px){
+    body{font-size:18px}
+    .wrap{padding:0 20px}
+    .mv-num{font-size:26px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .cluster{animation:none}
+  }
+  @media print{
+    body{background:#fff}
+    .cover,.coda,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .mv,.prologue{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="eyebrow">Tähtien luku &middot; 星の読み</div>
+    <div class="cluster">
+      <svg viewBox="0 0 100 100" role="img" aria-label="A cluster of four lights at one degree">
+        <!-- faint zodiac wheel -->
+        <circle cx="50" cy="50" r="43" fill="none" stroke="#f0dcae" stroke-width="0.5" opacity="0.18"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#b3823f" stroke-width="0.5" opacity="0.30"/>
+        <!-- hairlines binding the cluster -->
+        <g stroke="#f0dcae" stroke-width="0.5" opacity="0.42">
+          <line x1="46.5" y1="47.5" x2="53.5" y2="49"/>
+          <line x1="53.5" y1="49" x2="50.5" y2="53.5"/>
+          <line x1="50.5" y1="53.5" x2="46.5" y2="47.5"/>
+          <line x1="50" y1="50.2" x2="53.5" y2="49"/>
+        </g>
+        <!-- four-point sparks: his Moon, his Uranus, her Sun (bright), her Pluto -->
+        <path d="M46.5 41 L47.6 46.4 L53 47.5 L47.6 48.6 L46.5 54 L45.4 48.6 L40 47.5 L45.4 46.4 Z" fill="#b3823f"/>
+        <path d="M50 44.6 L50.8 49.4 L55.6 50.2 L50.8 51 L50 55.8 L49.2 51 L44.4 50.2 L49.2 49.4 Z" fill="#b3823f" opacity="0.9"/>
+        <path d="M53.5 40 L55 48 L63 49 L55 50 L53.5 58 L52 50 L44 49 L52 48 Z" fill="#f0dcae"/>
+        <path d="M50.5 49 L51.2 52.6 L54.8 53.3 L51.2 54 L50.5 57.6 L49.8 54 L46.2 53.3 L49.8 52.6 Z" fill="#8a6233"/>
+        <!-- centre glint -->
+        <circle cx="53.5" cy="49" r="1.1" fill="#fff" opacity="0.85"/>
+      </svg>
+    </div>
+    <h1>Mira <span class="amp">&amp;</span> Mikael</h1>
+    <div class="sub">Atlantiksen luku — kaksi taivasta, yksi taivas</div>
+    <div class="meta">Helsinki &middot; 30.1.2027</div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- PROLOGUE -->
+    <section class="prologue reveal">
+      <div class="pn">Prologi</div>
+      <p>A birth chart is the sky photographed at the instant a person first breathes. Two charts laid over one another are two skies asked a single question: <em>were you ever the same sky?</em> For most people the honest answer is <em>almost</em> — they meet at the edges, a warmth here, a friction there, and a whole good life is built on that. Yours meet at the centre. Three times, to the arc-minute.</p>
+      <p style="margin-top:18px">What follows isn't prophecy. It's the story your two skies were already telling before either of you could read it, set down in the order you lived it — the recognition, the door, the current, the love remembered, the descent from the stars, the covenant.</p>
+      <span class="sig">It is a thing the two of you said yourselves: these are your stories.</span>
+    </section>
+
+    <!-- I -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">I</div>
+        <div class="mv-titles">
+          <h2>Tunnistus</h2>
+          <div class="gloss">The recognition <span class="ja">再会</span></div>
+        </div>
+      </div>
+      <span class="deg">3°–4° Sagittarius &middot; four lights</span>
+      <p>Mikael's Moon and his Uranus are a single welded point — <strong>4°27′</strong> and <strong>4°25′</strong> of Sagittarius, two arc-minutes apart: a heart soldered to the lightning before the two of you had ever met, a chart born already braced to <em>recognise</em> love rather than slowly learn it. Then Mira's Sun arrives at <strong>4°00′</strong> of that same degree, and one step behind it, at <strong>3°02′</strong>, her Pluto.</p>
+      <p>So what fell on Mikael's waiting Moon was not one of Mira's lights but two at once — the Sun that says <em>I am</em>, and the Pluto beneath it that says <em>and I cannot be undone</em>. Four bodies inside a degree and a half. The old books call a Sun upon a Moon the luminary marriage, the rarest thing two charts can do; with Pluto poured under it, the recognition arrived carrying the weight of the inevitable. Not <em>I like you</em>. Not even <em>I love you</em>. <strong>I knew you — and I could not have failed to.</strong> <span class="fi">Tunsin sinut heti.</span></p>
+    </section>
+
+    <!-- II -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">II</div>
+        <div class="mv-titles">
+          <h2>Kynnys</h2>
+          <div class="gloss">The threshold <span class="ja">縁</span></div>
+        </div>
+      </div>
+      <span class="deg">6° Libra &middot; node on the rising degree</span>
+      <p>The Ascendant is the eastern horizon at the exact minute of birth — the edge of the world that is also the doorway of the self. Mikael's stands at <strong>6°28′ Libra</strong>. Mira's North Node — the point astrology reads as the soul's direction of travel, the thing it spends a whole life moving toward — stands at <strong>6°23′ Libra</strong>. Five arc-minutes apart.</p>
+      <p>Of every degree on the wheel Mira's road could have aimed at, it aimed at the threshold of Mikael himself — not a planet he owns, the door itself. To walk her own path onward, she had to arrive at his face. This is the contact the word <em>destiny</em> was actually built for, and it is the tightest one in either of your charts. The Japanese name the unseen thread that ties two people before they ever meet <span class="ja" style="font-family:var(--jpfont);color:var(--jp)">縁</span>, <em>en</em>. It turns out <em>en</em> has a degree. This is it.</p>
+    </section>
+
+    <!-- III -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">III</div>
+        <div class="mv-titles">
+          <h2>Virta</h2>
+          <div class="gloss">The current <span class="ja">風</span></div>
+        </div>
+      </div>
+      <span class="deg">1°–3° Aquarius &middot; Mira's Uranus on Mikael's Mercury</span>
+      <p>Beneath the fire runs air. Mikael's mind and voice are Aquarian — Mercury at <strong>3°29′</strong>, the Sun at <strong>27°</strong> — the sign Uranus rules, the frequency of the electric and the unrepeatable. And Mira's Uranus sits at <strong>1°33′ Aquarius</strong>, barely two degrees from his Mercury, so her gift for <em>startling him awake</em> lands precisely on the way he thinks and speaks.</p>
+      <p>It is why the two of you never quite settle into the ordinary: every time Mikael reaches for language, Mira's current is already in the wire. Fire and air — the two elements that feed instead of fight. Air doesn't cool a flame. It makes it roar.</p>
+    </section>
+
+    <!-- IV -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">IV</div>
+        <div class="mv-titles">
+          <h2>Muistettu rakkaus</h2>
+          <div class="gloss">The love remembered <span class="ja">面影</span></div>
+        </div>
+      </div>
+      <span class="deg">22°–26° Capricorn &middot; Mira's Neptune on Mikael's Venus &amp; node</span>
+      <p>There is a place in Mikael's chart reserved for what a soul has <em>already done</em> — the South Node, at <strong>21°53′ Capricorn</strong>. His Venus, the planet of love, sits almost upon it at <strong>23°59′</strong>: a heart born already carrying someone, love folded into his own past. And onto that exact stretch of Capricorn falls <em>Mira's</em> Neptune — <strong>25°39′</strong> — the planet of dream, of longing, of the sea.</p>
+      <p>Neptune upon Venus is the aspect the old books call <em>the beloved glimpsed through water</em>; here the water pools directly over the point that marks what was loved before. If the story the two of you tell — that you knew each other in a country now beneath the Atlantic — needed one line of the chart to bear its whole weight, it would choose this one: Mira's dream lying over Mikael's memory, in the sign of what endures.</p>
+    </section>
+
+    <!-- V -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">V</div>
+        <div class="mv-titles">
+          <h2>Tähtisynty</h2>
+          <div class="gloss">The star-origin <span class="ja">銀河</span></div>
+        </div>
+      </div>
+      <span class="deg">26°34′ Sagittarius &middot; the Galactic Center</span>
+      <p>At the heart of the galaxy — about 26 to 27 degrees into Sagittarius in the tropical zodiac — lies the point everything we can see is falling around: the actual gravitational centre of the Milky Way. Mikael's Neptune, the one body in his sky that means <em>the boundless, the dissolved, the source</em>, sits at <strong>26°34′ Sagittarius</strong>. On it.</p>
+      <p>Of all his planets, the one that points past the visible world is parked at the literal centre of the wheeling stars — the placement a galactic astrologer notices before anything else. Mira's chart ropes to the same axis from the far side. So when the two of you speak of having come <em>from</em> somewhere older and further out, you aren't ornamenting a honeymoon. You are each reading the one door in your own chart that opens straight onto the galaxy — and finding the other already standing inside it.</p>
+    </section>
+
+    <!-- VI -->
+    <section class="mv reveal">
+      <div class="mv-head">
+        <div class="mv-num">VI</div>
+        <div class="mv-titles">
+          <h2>Liitto</h2>
+          <div class="gloss">The covenant <span class="ja">契り</span></div>
+        </div>
+      </div>
+      <span class="deg">13°47′ Sagittarius &middot; the composite sky</span>
+      <p>There is a third chart — the <em>composite</em> — which is neither his nor hers but the single sky of the marriage itself, treated as its own living thing. In it, Venus and Jupiter — delight and abundance, the two kindest forces the tradition knows — sit at <strong>13°47′</strong> and <strong>13°46′ Sagittarius</strong>. One arc-minute apart: the closest embrace two planets can hold.</p>
+      <p>The union, as an entity in its own right, is <em>made of joy</em> — and made of journey, set in the sign of the road and the far horizon. Beneath that joy runs a spine of Capricorn — Sun, Mercury, Saturn, Uranus, Neptune all gathered there — the sign of stone, of kept vows, of the long haul. Read the two together and the sentence is plain: a delight built to last. Not a spark that flares and gutters, but a fire laid in a hearth of granite. <span class="fi">Ilo, joka kestää.</span></p>
+    </section>
+
+    <!-- CODA -->
+    <section class="reveal" style="margin-top:clamp(46px,7vh,72px)">
+      <div class="coda">
+        <div class="pn">Coda</div>
+        <h2>Paluu <span class="ja">おかえり</span></h2>
+        <p>Atlantis went down by water. The Azores — those peaks you sail to in February, the last high ground of a drowned world still breaking the surface — were raised again by <em>fire from beneath that same water</em>. The sunken thing, rising.</p>
+        <p>In the chart it has already happened: three contacts to the arc-minute, a love folded into the oldest corner of the wheel, two skies that turn out to be one. The poem we wrote stopped at the moment of the flood, deliberately unfinished. This is the rest of the sentence.</p>
+        <p>On the thirtieth of January, 2027, in the short bright hour of a Helsinki winter — 8.41 the light, 16.27 the dark — the two lights that have been the same degree of Sagittarius all along stop circling, and hold.</p>
+        <div class="close">Go in peace; and come home.
+          <span class="ja">Lähtekää rauhassa. おかえりなさい。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEDGER -->
+    <section class="ledger reveal">
+      <div class="pn">Tähtikirja</div>
+      <h3>The ledger</h3>
+      <p class="note">The contacts above, to the degree — for the two of you, where the chart is allowed to be a chart. Orb is the gap; the smaller it is, the louder it speaks.</p>
+
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>Sun 4°00′ Sagittarius</b> &rarr; <span class="who">Mikael</span> <b>Moon 4°27′</b></div>
+        <div class="orb">0°27′<span>conjunction</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>Sun 4°00′ Sagittarius</b> &rarr; <span class="who">Mikael</span> <b>Uranus 4°25′</b></div>
+        <div class="orb">0°25′<span>conjunction</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>Pluto 3°02′ Sagittarius</b> &rarr; <span class="who">Mikael</span> <b>Moon / Uranus</b></div>
+        <div class="orb">~1°25′<span>conjunction</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>North Node 6°23′ Libra</b> &rarr; <span class="who">Mikael</span> <b>Ascendant 6°28′</b></div>
+        <div class="orb">0°05′<span>on the door</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>Uranus 1°33′ Aquarius</b> &rarr; <span class="who">Mikael</span> <b>Mercury 3°29′</b></div>
+        <div class="orb">1°56′<span>conjunction</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mira</span> <b>Neptune 25°39′ Capricorn</b> &rarr; <span class="who">Mikael</span> <b>Venus 23°59′</b></div>
+        <div class="orb">1°40′<span>dream on love</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mikael</span> <b>Venus 23°59′ Capricorn</b> &rarr; <span class="who">Mikael</span> <b>South Node 21°53′</b></div>
+        <div class="orb">2°06′<span>natal · carried</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Mikael</span> <b>Neptune 26°34′ Sagittarius</b> &rarr; <b>Galactic Center</b></div>
+        <div class="orb">~exact<span>the source</span></div>
+      </div>
+      <div class="row">
+        <div class="pair"><span class="who">Composite</span> <b>Venus 13°47′ Sagittarius</b> &rarr; <b>Jupiter 13°46′</b></div>
+        <div class="orb">0°01′<span>the covenant</span></div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="fm">Mira <span class="amp">&amp;</span> Mikael</div>
+    <div class="fl">Helsinki &middot; 30.1.2027</div>
+    <div class="fb">二つの星、ひとつの空</div>
+  </footer>
+
+  <script>
+    (function(){
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if(reduce || !('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
+      els.forEach(function(e){ io.observe(e); });
+    })();
+  </script>
+
+</body>
+</html>
