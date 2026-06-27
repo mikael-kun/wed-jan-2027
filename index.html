@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className += ' js';</script>
 <title>Mira &amp; Mikael &middot; Helsinki 2027</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2319212e'/%3E%3Cpath d='M48 31.67A20 20 0 1 0 48 68.33 20 20 0 0 1 48 31.67Z' fill='%23b3823f'/%3E%3Ccircle cx='58.5' cy='50' r='10.5' fill='none' stroke='%23b3823f' stroke-width='2.6'/%3E%3Ccircle cx='58.5' cy='50' r='2.5' fill='%23b3823f'/%3E%3Cpath d='M50.5 31.8 51.17 35.33 54.7 36 51.17 36.67 50.5 40.2 49.83 36.67 46.3 36 49.83 35.33Z' fill='%23f0dcae'/%3E%3C/svg%3E">
 <meta name="description" content="Miran ja Mikaelin hääseremonia &middot; Helsinki, tammikuu 2027 &middot; 結婚式">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +47,8 @@
     border-bottom:1px solid var(--ice-line);
   }
   .nav-row{display:flex; align-items:center; justify-content:space-between; padding:12px 22px 8px}
-  .mono{font-family:var(--display); font-size:19px; font-weight:500; letter-spacing:.04em; color:var(--ink); text-decoration:none; white-space:nowrap}
+  .mono{font-family:var(--display); font-size:19px; font-weight:500; letter-spacing:.04em; color:var(--ink); text-decoration:none; white-space:nowrap; display:inline-flex; align-items:center; gap:.45em}
+  .mono .wm{width:1.15em; height:1.15em; flex:0 0 auto}
   .mono span{color:var(--brass); font-style:italic; padding:0 2px}
   .lang-toggle{
     font-family:var(--jpfont); font-size:13px; color:var(--ink);
@@ -257,7 +259,7 @@
 
   <header class="topbar">
     <div class="nav-row">
-      <a class="mono" href="#top">Mira <span>&amp;</span> Mikael</a>
+      <a class="mono" href="#top"><svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 48 31.67 A 20 20 0 1 0 48 68.33 A 20 20 0 0 1 48 31.67 Z" fill="#b3823f"/><circle cx="58.5" cy="50" r="10.5" fill="none" stroke="#b3823f" stroke-width="2.6" vector-effect="non-scaling-stroke"/><circle cx="58.5" cy="50" r="2.5" fill="#b3823f"/><path d="M 50.5 31.8 L 51.17 35.33 L 54.7 36 L 51.17 36.67 L 50.5 40.2 L 49.83 36.67 L 46.3 36 L 49.83 35.33 Z" fill="#f0dcae"/></svg>Mira <span>&amp;</span> Mikael</a>
       <button class="lang-toggle on" id="jpToggle" aria-pressed="true" title="Näytä tai piilota japaninkielinen käännös">日本語訳 <span class="dot"></span></button>
     </div>
     <nav class="jump" aria-label="Sivun osat">

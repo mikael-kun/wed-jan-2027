@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className += ' js';</script>
 <title>Atlântida &middot; a honeymoon score &middot; São Miguel &amp; Pico</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1318'/%3E%3Cpath d='M48 31.67A20 20 0 1 0 48 68.33 20 20 0 0 1 48 31.67Z' fill='%23c79653'/%3E%3Ccircle cx='58.5' cy='50' r='10.5' fill='none' stroke='%23c79653' stroke-width='2.6'/%3E%3Ccircle cx='58.5' cy='50' r='2.5' fill='%23c79653'/%3E%3Cpath d='M50.5 31.8 51.17 35.33 54.7 36 51.17 36.67 50.5 40.2 49.83 36.67 46.3 36 49.83 35.33Z' fill='%23f0dcae'/%3E%3C/svg%3E">
 <meta name="description" content="Atlântida — a small honeymoon score in five movements. São Miguel &amp; Pico, February 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -186,9 +187,42 @@
     .reveal{opacity:1; transform:none; transition:none}
     body{background-attachment:scroll}
   }
+  /* ---------- SHARED TOPBAR (matches main site, oceanic palette) ---------- */
+  .topbar{position:sticky; top:0; z-index:1000; background:rgba(11,19,24,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:12px 22px 8px}
+  .mono{font-family:var(--display); font-size:19px; font-weight:500; letter-spacing:.04em; color:var(--foam); text-decoration:none; white-space:nowrap; display:inline-flex; align-items:center; gap:.45em}
+  .mono .wm{width:1.15em; height:1.15em; flex:0 0 auto}
+  .mono span{color:var(--brass); font-style:italic; padding:0 2px}
+  .lang-toggle{font-family:var(--jpfont); font-size:13px; color:var(--foam); background:transparent; border:1px solid var(--line); border-radius:999px; padding:5px 13px; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:border-color .2s;}
+  .lang-toggle:hover{border-color:var(--brass)}
+  .lang-toggle .dot{width:8px; height:8px; border-radius:50%; border:1.5px solid var(--brass); background:transparent; transition:background .2s}
+  .lang-toggle.on .dot{background:var(--brass)}
+  .jump{display:flex; gap:8px; overflow-x:auto; padding:2px 22px 11px; -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .jump::-webkit-scrollbar{display:none}
+  .jump a{flex:0 0 auto; font-family:var(--ui); font-size:12.5px; letter-spacing:.03em; text-decoration:none; color:var(--foam); border:1px solid var(--line); border-radius:999px; padding:6px 14px; white-space:nowrap; transition:border-color .2s, color .2s, background .2s;}
+  .jump a:hover{border-color:var(--brass); color:var(--brass)}
+  .jump a.here{border-color:var(--brass); background:rgba(199,150,83,.14); color:var(--brass)}
+  .jump a .ja{font-family:var(--jpfont); color:var(--muted-2); margin-left:5px; font-size:11px}
+  body.hide-jp .jp, body.hide-jp .lang-jp{display:none}
 </style>
 </head>
 <body>
+
+  <header class="topbar">
+    <div class="nav-row">
+      <a class="mono" href="index.html"><svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 48 31.67 A 20 20 0 1 0 48 68.33 A 20 20 0 0 1 48 31.67 Z" fill="#c79653"/><circle cx="58.5" cy="50" r="10.5" fill="none" stroke="#c79653" stroke-width="2.6" vector-effect="non-scaling-stroke"/><circle cx="58.5" cy="50" r="2.5" fill="#c79653"/><path d="M 50.5 31.8 L 51.17 35.33 L 54.7 36 L 51.17 36.67 L 50.5 40.2 L 49.83 36.67 L 46.3 36 L 49.83 35.33 Z" fill="#f0dcae"/></svg>Mira <span>&amp;</span> Mikael</a>
+      <button class="lang-toggle on" id="jpToggle" aria-pressed="true" title="Näytä tai piilota japaninkielinen käännös">日本語訳 <span class="dot"></span></button>
+    </div>
+    <nav class="jump" aria-label="Sivun osat">
+      <a href="index.html#paiva">Päivä<span class="ja">一日</span></a>
+      <a href="index.html#ohjelma">Seremonia<span class="ja">式</span></a>
+      <a href="index.html#musiikki">Musiikki<span class="ja">音楽</span></a>
+      <a href="index.html#vastaanotto">Vastaanotto<span class="ja">披露宴</span></a>
+      <a href="index.html#paikat">Paikat<span class="ja">地図</span></a>
+      <a href="vihkikaava.pdf" target="_blank" rel="noopener">Vihkikaava<span class="ja">式次第</span></a>
+      <a href="atlantida.html" class="here" aria-current="page">Atlântida<span class="ja">蜜月</span></a>
+    </nav>
+  </header>
 
   <section class="hero">
     <div class="crest">Honeymoon score &middot; 映画音楽</div>
@@ -429,6 +463,17 @@
           if(e.key === 'ArrowRight'){ o.audio.currentTime = Math.min(o.audio.duration, o.audio.currentTime + 5); e.preventDefault(); }
           else if(e.key === 'ArrowLeft'){ o.audio.currentTime = Math.max(0, o.audio.currentTime - 5); e.preventDefault(); }
         });
+      });
+    })();
+  </script>
+  <script>
+    (function(){
+      var btn = document.getElementById('jpToggle');
+      if(!btn) return;
+      btn.addEventListener('click', function(){
+        var hidden = document.body.classList.toggle('hide-jp');
+        btn.classList.toggle('on', !hidden);
+        btn.setAttribute('aria-pressed', String(!hidden));
       });
     })();
   </script>
